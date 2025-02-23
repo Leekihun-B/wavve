@@ -1,0 +1,492 @@
+.warp {
+    position: relative;
+    background-color: rgb(30, 30, 30);
+}
+header {
+    width: 100%;
+    min-height: 190px;
+    /* background-color: rgb(30, 30, 30); */
+}
+header .title {
+    width: 1240px;
+    height: 130px;
+    margin: auto;
+    padding-top: 60px;
+    /* background-color: rgb(255, 0, 0); */
+}
+header .title .logo {
+    width: 110px;
+    height: 30px;
+}
+
+/** 메인S */
+main {
+    width: 100%;
+    min-height: 1000px;
+    background-color: rgb(30, 30, 30);
+}
+main > .main{
+    width: 100%;
+    min-height: 1300px;
+    /* background-color: rgb(0, 255, 149); */
+}
+
+
+
+.user-info-area {
+    width: 560px;
+    height: 1090px;
+    padding-top: 30px;
+    margin: auto;
+
+    background-color: rgb(37, 37, 37);
+}
+.user-info-area .user-info {
+    color: rgb(131, 131, 131);
+    margin: auto;
+    border-spacing: 0 10px;
+}
+.user-info-area .user-info tbody th {
+    width: 150px;
+    text-align: left;
+    font-size: 14px;
+    /* background-color: rgb(153, 59, 59); */
+}
+.user-info-area .user-info tbody td {
+    width: 350px;
+    height: 41px;
+    /* background-color: rgb(153, 59, 59); */
+}
+
+.phone_number {
+    width: 320px;
+    height: 40px;
+    font-size: 16px;
+    text-indent: 10px;
+    background-color: rgb(56, 56, 56);
+    border: none;
+    outline: none;
+    caret-color: white;
+}
+
+.link-area-a {
+    display: block;
+    width: 180px;
+    color: white;
+    background: url(https://member.wavve.com/images/member/icons-skip-right-w.png) no-repeat right center;
+}
+.link-area-b {
+    display: block;
+    width: 140px;
+    color: white;
+    background: url(https://member.wavve.com/images/member/icons-skip-right-w.png) no-repeat right center;
+}
+.link-area-c {
+    display: block;
+    width: 222px;
+    color: white;
+    background: url(https://member.wavve.com/images/member/icons-skip-right-w.png) no-repeat right center;
+}
+.link-area-d {
+    display: block;
+    width: 140px;
+    color: white;
+    background: url(https://member.wavve.com/images/member/icons-skip-right-w.png) no-repeat right center;
+}
+.link-area-e {
+    display: block;
+    width: 115px;
+    color: white;
+    background: url(https://member.wavve.com/images/member/icons-skip-right-w.png) no-repeat right center;
+}
+
+.checkbox_area {
+    width: 500px;
+    height: 360px;
+    margin: auto;
+    margin-top: 10px;
+
+    background-color: rgb(44, 44, 44);
+}
+.checkbox_area ul li {
+    width: 100%;
+    height: 91px;
+
+    background-color: rgb(30, 30, 30);
+}
+.checkbox_area ul li div{
+    position: relative;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    padding-top: 30px;
+    font-size: 18px;
+    color: rgb(156, 156, 156);
+
+    background-color: rgb(44, 44, 44);
+}
+.checkbox_area ul li input[type="checkbox"]{
+    width: 25px;
+    height: 25px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.checkbox_area ul li .more-img{
+    position: absolute;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    margin-left: 40px;
+    background: url(https://member.wavve.com/images/member/icons-skip-right-w.png) no-repeat right center;
+    
+    /* background-color: rgb(104, 104, 104); */
+}
+
+.checkbox_area ul li div .check-b-a{
+    margin-left: 50px;
+}
+.checkbox_area ul li div .check-b-b{
+    margin-left: 50px;
+}
+
+
+.user-info-area .explanation {
+    width: 500px;
+    height: 25px;
+    margin: auto;
+    padding-top: 5px;
+    font-size: 14px;
+    color: rgb(95, 95, 95);
+}
+
+.button-area {
+    width: 500px;
+    height: 60px;
+    margin: auto;
+    margin-top: 25px;
+
+    /* background-color: rgb(97, 97, 97); */
+}
+.button-area ul {
+    display: flex;
+}
+.button-area ul li {
+    width: 245px;
+    height: 60px;
+    /* background-color: red; */
+}
+.button-area ul li:first-child {
+    margin-right: 10px;
+}
+.button-area ul li button{
+    width: 245px;
+    height: 60px;
+    color: white;
+    font-size: 18px;
+    /* background-color: red; */
+}
+.button-area ul li .cancell{
+    width: 245px;
+    height: 60px;
+    border-radius: 30px 30px 30px 30px;
+    background-color: rgb(70, 70, 70);
+}
+.button-area ul li .modify{
+    width: 245px;
+    height: 60px;
+    border-radius: 30px 30px 30px 30px;
+    background-color: rgb(17, 72, 255);
+}
+
+.user-drop-out {
+    width: 560px;
+    height: 70px;
+    margin: auto;
+    position: relative;
+
+    /* background-color: rgb(0, 0, 0); */
+}
+.user-drop-out .drop-out-button-area {
+    width: 70px;
+    height: 37px;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    user-select: none;
+    padding-top: 13px;
+    /* background-color: rgb(119, 119, 119); */
+}
+.user-drop-out .drop-out-button-area .drop-out-button {
+    display: block;
+    width: 80px;
+    height: 24px;
+    background-color: red;
+    color: rgb(179, 179, 179);
+    background: url(https://www.wavve.com/img/icon-arrow-see-all-default.01e1b585.svg) no-repeat 100%;
+}
+
+/** 메인E */
+
+/** 팝업S */
+.email-area {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 1500px;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.800);
+}
+.email-area .email-change-popup {
+    position: relative;
+    width: 420px;
+    min-height: 400px;
+    margin: auto;
+    margin-top: 100px;
+    padding-top: 60px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: rgb(36, 36, 36);
+}
+.email-area .email-change-popup .email-title {
+    width: 300px;
+    height: 75px;
+    margin: auto;
+    /* background-color: rgb(255, 59, 59); */
+}
+.email-area .email-change-popup .email-title span:first-child {
+    display: block;
+    width: 130px;
+    height: 20px;
+    margin: auto;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 15px;
+    /* background-color: rgb(255, 165, 165); */
+}
+.email-area .email-change-popup .email-title span {
+    display: block;
+    width: 170px;
+    height: 20px;
+    margin: auto;
+    font-size: 10px;
+    color: rgb(165, 165, 165);
+    /* background-color: rgb(255, 165, 165); */
+}
+.email-area .email-change-popup .email-input {
+    width: 300px;
+    height: 40px;
+    margin: auto;
+    border-radius: 3px 3px 3px 3px;
+    color: rgb(104, 104, 104);
+    background-color: rgb(49, 49, 49);
+    display: flex;
+}
+.email-area .email-change-popup .email-input .email {
+    width: 200px;
+    height: 40px;
+    margin: auto;
+    border: none;
+    outline: none;
+    text-indent: 10px;
+    color: rgb(104, 104, 104);
+    background-color: rgb(49, 49, 49);
+}
+.email-area .email-change-popup .email-input .code-button {
+    width: 100px;
+    height: 40px;
+    color: rgb(66, 110, 255);
+    font-size: 13px;
+    background-color: rgb(49, 49, 49);
+}
+
+.email-area .email-change-popup .explanation {
+    width: 300px;
+    height: 40px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: rgb(104, 104, 104);
+    font-size: 11px;
+    /* background-color: rgb(49, 49, 49); */
+}
+
+.email-area .email-change-popup .code-input {
+    width: 300px;
+    height: 40px;
+    margin: auto;
+    color: rgb(104, 104, 104);
+    font-size: 13px;
+    margin-bottom: 80px;
+    background-color: rgb(49, 49, 49);
+}
+.email-area .email-change-popup .code-input .code {
+    width: 300px;
+    height: 40px;
+    margin: auto;
+    border: none;
+    outline: none;
+    text-indent: 10px;
+    color: rgb(104, 104, 104);
+    font-size: 13px;
+    background-color: rgb(49, 49, 49);
+}
+.email-area .email-change-popup .email-check {
+    display: block;
+    width: 300px;
+    height: 40px;
+    margin: auto;
+    text-indent: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+    border-radius: 30px 30px 30px 30px;
+    background-color: rgb(17, 72, 255);
+}
+.email-area .email-change-popup .email-close {
+    position: absolute;
+    top: 0px;
+    right: -40px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    /* background-color: rgb(17, 72, 255); */
+}
+
+
+.password-area {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 1500px;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.800);
+}
+.password-area .password-change-popup {
+    position: relative;
+    width: 550px;
+    min-height: 430px;
+    margin: auto;
+    margin-top: 150px;
+    padding-top: 60px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: rgb(36, 36, 36);
+}
+.password-area .password-change-popup .password-title {
+    width: 300px;
+    height: 75px;
+    margin: auto;
+    /* background-color: rgb(255, 59, 59); */
+}
+.password-area .password-change-popup .password-title span:first-child {
+    display: block;
+    width: 110px;
+    height: 20px;
+    margin: auto;
+    margin-bottom: 15px;
+    color: white;
+    font-size: 18px;
+    /* background-color: rgb(255, 165, 165); */
+}
+.password-area .password-change-popup .password-title span {
+    display: block;
+    width: 190px;
+    height: 20px;
+    margin: auto;
+    font-size: 13px;
+    color: rgb(165, 165, 165);
+    /* background-color: rgb(255, 165, 165); */
+}
+.password-area .password-change-popup .password-id-area {
+    width: 450px;
+    height: 35px;
+    border: 1px solid rgb(54, 54, 54);
+    border-radius: 3px 3px 3px 3px;
+    margin: auto;
+    text-align: center;
+    padding-top: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: rgb(165, 165, 165);
+    /* background-color: rgb(255, 59, 59); */
+}
+.password-area .password-change-popup .password-id-check-input1 {
+    width: 450px;
+    height: 50px;
+    margin: auto;
+    font-size: 13px;
+    border-radius: 3px 3px 0px 0px;
+    color: rgb(165, 165, 165);
+    background-color: rgb(54, 54, 54);
+}
+.password-area .password-change-popup .password-id-check-input1 .password1 {
+    width: 450px;
+    height: 50px;
+    margin: auto;
+    font-size: 13px;
+    border-radius: 3px 3px 0px 0px;
+    color: rgb(165, 165, 165);
+    font-size: 15px;
+    text-indent: 10px;
+    border: none;
+    outline: none;
+    background-color: rgb(54, 54, 54);
+}
+.password-area .password-change-popup .password-id-check-input2 {
+    width: 450px;
+    height: 50px;
+    margin: auto;
+    font-size: 13px;
+    border-radius: 0px 0px 3px 3px;
+    color: rgb(165, 165, 165);
+    background-color: rgb(54, 54, 54);
+}
+.password-area .password-change-popup .password-id-check-input2 .password2 {
+    width: 450px;
+    height: 50px;
+    margin: auto;
+    font-size: 13px;
+    border-radius: 0px 0px 3px 3px;
+    color: rgb(165, 165, 165);
+    font-size: 15px;
+    text-indent: 10px;
+    border: none;
+    outline: none;
+    background-color: rgb(54, 54, 54);
+}
+.password-area .password-change-popup .explanation {
+    width: 450px;
+    height: 20px;
+    margin: auto;
+    margin-top: 20px;
+    color: rgb(104, 104, 104);
+    font-size: 13px;
+    /* background-color: rgb(151, 151, 151); */
+}
+.password-area .password-change-popup .password-check {
+    display: block;
+    width: 450px;
+    height: 50px;
+    margin: auto;
+    margin-top: 50px;
+    text-indent: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+    border-radius: 30px 30px 30px 30px;
+    background-color: rgb(17, 72, 255);
+}
+.password-area .password-change-popup .password-close {
+    position: absolute;
+    top: 0px;
+    right: -40px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    /* background-color: rgb(17, 72, 255); */
+}
+
+
+
+/** 팝업E */

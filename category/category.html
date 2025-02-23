@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="description" content="Wavve 사이트 clone 작업물">
+    <meta name="keywords" content="Wavve, clone작업물">
+    <meta name="author" content="Lee gi hun">
+    <title>My Web Page</title>
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/header.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/footer.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/swiper_css.css" />
+
+    <style>
+        .warp {
+            background-color: rgb(30, 30, 30);
+        }
+        
+        /** 메인S */
+        main {
+            width: 100%;
+            min-height: 1300px;
+            padding-top: 70px;
+            background-color: rgb(30, 30, 30);
+        }
+        main > .main{
+            width: 100%;
+            min-height: 800px;
+            /* background-color: rgb(0, 255, 149); */
+        }
+
+        main .main section{
+            width: 1240px;
+            margin: auto;
+        }
+        
+        main .main .content-select{
+            width: 100%;
+            height: 150px;
+            margin-bottom: 40px;
+            display: flex;
+
+            /* background-color: rgb(136, 136, 136); */
+        }
+        main .main .content-select .content-select-title{
+            margin-top: 57px;
+            color: white;
+        }
+        main .main .content-select .drama-select{
+            width: 250px;
+            height: 50px;
+            margin-left: 20px;
+            margin-top: 50px;
+            border-radius: 10px 10px 10px 10px;
+            color: white;
+            border: none;
+            outline: none; /* 포커스 시 테두리도 제거 */
+            text-indent: 15px;
+            font-size: 17px;
+            font-weight: 300;
+            background-color: rgb(44, 44, 44);
+        }
+        main .main .content-select .drama-select option{
+            display: block;
+            width: 20px;
+            padding: 10px 10px 10px 10px;
+        }
+
+
+        .content {
+            width: 100%;
+            height: 500px;
+            margin-bottom: 20px;
+            /* background-color: red; */
+        }
+        .content > .content-area {
+            width: 1240px;
+            height: 500px;
+            margin: auto;
+            /* background-color: rgb(206, 107, 107); */
+        }
+        .content > .content-area > .head-box {
+            width: 1240px;
+            height: 50px;
+            position: relative;
+            /* background-color: rgb(255, 0, 0); */
+        }
+        .content > .content-area > .head-box > .head-box-title {
+            width: 1240px;
+            height: 50px;
+            color: white;
+            font-size: 17px;
+            /* background-color: rgb(85, 85, 85); */
+        }
+        .content > .content-area > .head-box > .head-box-more-button {
+            width: 70px;
+            height: 37px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            user-select: none;
+            padding-top: 13px;
+            /* background-color: rgb(119, 119, 119); */
+        }
+        .content > .content-area > .head-box > .head-box-more-button > .more-button {
+            display: block;
+            width: 65px;
+            height: 24px;
+            background-color: red;
+            color: rgb(179, 179, 179);
+            background: url(https://www.wavve.com/img/icon-arrow-see-all-default.01e1b585.svg) no-repeat 100%;
+        }
+        .content > .content-area > .content-list {
+            width: 1240px;
+            height: 450px;
+            overflow: hidden;
+            /* background-color: rgb(202, 202, 202); */
+        }
+        .swiper-wrapper {
+            user-select: none;
+        }
+        .content-swiper {
+            position: relative;
+        }
+        .content-swiper .swiper-button-next{
+            width: 35px;
+            height: 50px;
+            background-color: rgba(65, 65, 65, 0.568);
+            top: 160px;
+            right: -40px;
+        }
+        .content-swiper .swiper-button-prev{
+            width: 35px;
+            height: 50px;
+            background-color: rgba(65, 65, 65, 0.568);
+            top: 160px;
+            left: -40px;
+        }
+        .content-swiper .swiper-slide {
+            width: 240px !important;
+            height: 360px !important;
+            margin-right: 10px;
+            text-align: center;
+            border-radius: 10px 10px 10px 10px;
+            font-size: 18px;
+            /* background: #fff; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+        }
+        .content-swiper .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px 10px 10px 10px;
+            object-fit: cover;
+            transition: transform 0.2s ease-in-out;
+        }
+        .content-swiper .swiper-slide .thumnail:hover {
+            transform: scale(1.05);
+        }
+        .content-swiper .swiper-slide .number {
+            position: absolute;
+            width: 110px;
+            height: 70px;
+            left: 10px;
+            bottom: 10px;
+        }
+
+
+        /** 메인E */
+        
+    </style>
+</head>
+
+<body>
+    <h1 style="display: block; position: absolute; left: -200000px;">wavve clone 작업물</h1>
+    <div class="warp">
+        <header>
+            <div class="header">
+                <div class="logo">
+                    <div class="logo-box">
+                        <a href="../index.html"><img src="https://www.wavve.com/img/ci-wavve.5b304973.svg" alt="Wavve" /></a>
+                    </div>
+                </div>
+                <div class="navigator">
+                    <ul>
+                        <li><a href="category.html">드라마</a></li>
+                        <li><a href="category.html">예능</a></li>
+                        <li><a href="category.html">영화</a></li>
+                        <li><a href="category.html">애니</a></li>
+                        <li><a href="category.html">해외시리즈</a></li>
+                        <li><a href="category.html">시사교양</a></li>
+                        <li><a href="category.html">키즈</a></li>
+                        <li><a href="category.html">영화플러스</a></li>
+                        <li><a href="category.html">LIVE</a></li>
+                    </ul>
+                </div>
+                <div class="info">
+                    <nav class="search" id="search">
+                        <button class="search-button">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.4508 8.90796C15.4508 12.4977 12.5396 15.408 8.94985 15.408C5.3611 15.408 2.45081 12.4977 2.45081 8.90796C2.45081 5.31825 5.3611 2.40796 8.94985 2.40796C12.5396 2.40796 15.4508 5.31825 15.4508 8.90796Z" stroke="#A5A5A5" stroke-width="2"></path>
+                                <path d="M14.0474 13.6536L19.7904 19.2229" stroke="#A5A5A5" stroke-width="2" stroke-linecap="round"></path>
+                            </svg>
+                        </button>
+                        <div class="search-area">
+                            <div class="search-t"></div>
+                            <div class="search-box">
+                                <label for="search-input">
+                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M15.4508 8.90796C15.4508 12.4977 12.5396 15.408 8.94985 15.408C5.3611 15.408 2.45081 12.4977 2.45081 8.90796C2.45081 5.31825 5.3611 2.40796 8.94985 2.40796C12.5396 2.40796 15.4508 5.31825 15.4508 8.90796Z" stroke="#A5A5A5" stroke-width="2"></path>
+                                        <path d="M14.0474 13.6536L19.7904 19.2229" stroke="#A5A5A5" stroke-width="2" stroke-linecap="round"></path>
+                                    </svg>
+                                </label>
+                                <input type="text" id="search-input" value="" autocomplete="off" placeholder="제목, 장르, 배우로 찾아보세요 " />
+                            </div>
+                        </div>
+                    </nav>
+                    <nav>
+                        <button class="my-info-button" id="my-info-button">
+                            <svg data-v-17d2183c="" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-53c40c25="">
+                                <rect x="7.5" y="2" width="7" height="8" rx="3.5" stroke="#A5A5A5" stroke-width="2"></rect>
+                                <path d="M2 19V19C2.58146 16.0927 5.13416 14 8.09902 14H13.901C16.8658 14 19.4185 16.0927 20 19V19" stroke="#A5A5A5" stroke-width="2" stroke-linecap="round"></path>
+                            </svg>
+                            <div class="my-info-box">
+                                <div class="my-info-box-area">
+                                    <div><img src="./img/" alt="">로그인</div>
+                                    <div><img src="./img/" alt="">이용권</div>
+                                    <div><img src="./img/" alt="">쿠폰등록</div>
+                                </div>
+                            </div>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="main">
+                <section>
+                    <div class="content-select">
+                        <div class="content-select-title">
+                            <h2>드라마</h2>
+                        </div>
+                        <select name="drama-select" id="drama-select" class="drama-select">
+                            <option value="0">장르</option>
+                            <option value="1">드라마 홈</option>
+                            <option value="2">드라마 전체</option>
+                            <option value="3">오리지널</option>
+                            <option value="4">가족</option>
+                            <option value="5">기타</option>
+                            <option value="6">단편</option>
+                            <option value="7">로맨스</option>
+                            <option value="8">리메이크</option>
+                        </select>
+                    </div>
+                </section>
+                <section>
+                    <div class="content">
+                        <div class="content-area">
+                            <div class="head-box">
+                                <div class="head-box-title">
+                                    <h2>드라마 TOP 20</h2>
+                                </div>
+                            </div>
+                            <div class="content-list">
+                                <!-- Swiper -->
+                                <div class="content-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202501/1737349885676130594.webp" alt="예시썸네일">
+                                            <div class="number">
+                                                <img src="data:image/png;base64,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" alt="랭킹 1위">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일">
+                                            <div class="number">
+                                                <img src="data:image/png;base64,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" alt="랭킹 2위">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202402/1708404301458518711.webp" alt="예시썸네일">
+                                            <div class="number">
+                                                <img src="https://www.wavve.com/img/element-icons-120-x-76-ic-rank-3@3x.ed1566ed.png" alt="랭킹 3위">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202501/1736150225626657444.webp" alt="예시썸네일">
+                                            <div class="number">
+                                                <img src="data:image/png;base64,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" alt="랭킹 4위">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202502/1738563313382932047.webp" alt="예시썸네일">
+                                            <div class="number">
+                                                <img src="data:image/png;base64,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" alt="랭킹 5위">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일">
+                                            <div class="number">
+                                                <img src="data:image/png;base64,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" alt="랭킹 6위">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202402/1708404301458518711.webp" alt="예시썸네일">
+                                            <div class="number">
+                                                <img src="data:image/png;base64,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" alt="랭킹 7위">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일">
+                                            <div class="number">
+                                                <img src="https://www.wavve.com/img/element-icons-120-x-76-ic-rank-8@3x.6fd956be.png" alt="랭킹 8위">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일">
+                                            <div class="number">
+                                                <img src="data:image/png;base64,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" alt="랭킹 9위">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일">
+                                            <div class="number">
+                                                <img src="https://www.wavve.com/img/element-icons-120-x-76-ic-rank-10@3x.83398a7f.png" alt="랭킹 10위">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="content-area">
+                            <div class="head-box">
+                                <div class="head-box-title">
+                                    <h2>믿고 보는 웨이브 에디터 추천작</h2>
+                                </div>
+                                <div class="head-box-more-button">
+                                    <a href="javascript:void(0);" class="more-button">더보기</a>
+                                </div>
+                            </div>
+                            <div class="content-list">
+                                <!-- Swiper -->
+                                <div class="content-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202501/1737349885676130594.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202402/1708404301458518711.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202501/1736150225626657444.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202502/1738563313382932047.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202402/1708404301458518711.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                    </div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="content-area">
+                            <div class="head-box">
+                                <div class="head-box-title">
+                                    <h2>믿고 보는 웨이브 에디터 추천작</h2>
+                                </div>
+                                <div class="head-box-more-button">
+                                    <a href="javascript:void(0);" class="more-button">더보기</a>
+                                </div>
+                            </div>
+                            <div class="content-list">
+                                <!-- Swiper -->
+                                <div class="content-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202501/1737349885676130594.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202402/1708404301458518711.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202501/1736150225626657444.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202502/1738563313382932047.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202402/1708404301458518711.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                    </div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="content-area">
+                            <div class="head-box">
+                                <div class="head-box-title">
+                                    <h2>믿고 보는 웨이브 에디터 추천작</h2>
+                                </div>
+                                <div class="head-box-more-button">
+                                    <a href="javascript:void(0);" class="more-button">더보기</a>
+                                </div>
+                            </div>
+                            <div class="content-list">
+                                <!-- Swiper -->
+                                <div class="content-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202501/1737349885676130594.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202402/1708404301458518711.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202501/1736150225626657444.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202502/1738563313382932047.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202402/1708404301458518711.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                    </div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="content-area">
+                            <div class="head-box">
+                                <div class="head-box-title">
+                                    <h2>믿고 보는 웨이브 에디터 추천작</h2>
+                                </div>
+                                <div class="head-box-more-button">
+                                    <a href="javascript:void(0);" class="more-button">더보기</a>
+                                </div>
+                            </div>
+                            <div class="content-list">
+                                <!-- Swiper -->
+                                <div class="content-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202501/1737349885676130594.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202402/1708404301458518711.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202501/1736150225626657444.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202502/1738563313382932047.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202402/1708404301458518711.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                    </div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="content-area">
+                            <div class="head-box">
+                                <div class="head-box-title">
+                                    <h2>믿고 보는 웨이브 에디터 추천작</h2>
+                                </div>
+                                <div class="head-box-more-button">
+                                    <a href="javascript:void(0);" class="more-button">더보기</a>
+                                </div>
+                            </div>
+                            <div class="content-list">
+                                <!-- Swiper -->
+                                <div class="content-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202501/1737349885676130594.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202402/1708404301458518711.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202501/1736150225626657444.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202502/1738563313382932047.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202402/1708404301458518711.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                    </div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="content-area">
+                            <div class="head-box">
+                                <div class="head-box-title">
+                                    <h2>믿고 보는 웨이브 에디터 추천작</h2>
+                                </div>
+                                <div class="head-box-more-button">
+                                    <a href="javascript:void(0);" class="more-button">더보기</a>
+                                </div>
+                            </div>
+                            <div class="content-list">
+                                <!-- Swiper -->
+                                <div class="content-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202501/1737349885676130594.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202402/1708404301458518711.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202501/1736150225626657444.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202502/1738563313382932047.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202402/1708404301458518711.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                    </div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="content-area">
+                            <div class="head-box">
+                                <div class="head-box-title">
+                                    <h2>믿고 보는 웨이브 에디터 추천작</h2>
+                                </div>
+                                <div class="head-box-more-button">
+                                    <a href="javascript:void(0);" class="more-button">더보기</a>
+                                </div>
+                            </div>
+                            <div class="content-list">
+                                <!-- Swiper -->
+                                <div class="content-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202501/1737349885676130594.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202402/1708404301458518711.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202501/1736150225626657444.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202502/1738563313382932047.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202402/1708404301458518711.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img class="thumnail" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                    </div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+        </main>
+
+        <div class="announcement">
+            <div>
+                <div class="title">
+                    <h3>공지사항</h3>
+                </div>
+                <div class="announcement-swiper">
+                    <!-- Swiper -->
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">[업데이트] 1월 2주차 업데이트 진행</div>
+                            <div class="swiper-slide">[중지] 2월 중지되는 프로그램 목록</div>
+                            <div class="swiper-slide">[업데이트] 1월 업데이트 프로그램</div>
+                        </div>
+
+                    </div>
+                </div>
+                <button class="prev-button-area">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAlBJREFUaAXtVktrGlEUzvioYqELpRCyiIss7CK7/gJdNMEEQjdSunATfNEEugi0BPoDmkV3iY/4qGIKFUIXDdJmY6kEAv0FdhNw405oScWq0Xx3IQyDEqLn5AFnNvfOnbnf+b7vnHNnZmbkEgfEAXFAHBAHxAFxQBwQB+6iA8lk8i01LxM14FV4iURiZzAYPL/qves+t1x3w6Tvg7yGTOxhfGq3259NijNunzbuAeV6qVQyN5vNj8CcdzqdK4FA4JwSX2GxZwQiHkDEZ8Sy22y2JYhoU4tQeKwZQSk5UEpfEOevpmkvI5FIl0OEwmRr9mKx+Kjf73+DkAbK6QWnCCWEJSP5fN7VarW+IwunELCJcaCCcV7kGcnlcrMQUQX542g0unETIpRBpELS6bS73W6fgHweIrY5M2DEJhMCEYvdbrdqMpk+QMR7YyDuezIhvV5vGWSr6IldbtKj8MmEWK3WTyipBfyCpHBSkeGOIj1qjfTUKhQKD9HoRwjU8Hg8Qa/X2xsVlGONVIgiWC6XbfV6/RBZuXC73QG/3/+fg7gRk1yIClCpVCy1Wu0AU5fD4VgLBoP/jIGp71mEKJKqT9Av+5g+wUnmxyHwh5q8Ho+tKdH4/Vgsto7xF0T9yGazj/WBqedsQoZE8U15DSFfO53Oz0wmMzdcpx7ZSstIFGW2hbVXZrPZFwqFzozPp72/MSGKaDwej6DU3qFnfOFw+Pe05PX72UtLHww9k0SZvVG/9/r1eztPpVKr95a8EBcHxAFxQBwQB8QBcUAcEAdu3YFLPjOyQF+dJGYAAAAASUVORK5CYII=" alt="이전목록">
+                </button>
+                <button class="next-button-area">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTU2RTc3QzVDNUU2MTFFNzhGNzQ4QUM1NTY5RjA2NDMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTU2RTc3QzZDNUU2MTFFNzhGNzQ4QUM1NTY5RjA2NDMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxNTZFNzdDM0M1RTYxMUU3OEY3NDhBQzU1NjlGMDY0MyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxNTZFNzdDNEM1RTYxMUU3OEY3NDhBQzU1NjlGMDY0MyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PvXeOssAAAH+SURBVHja7Jm/SwJhGMe9y0uwMJCCajAiyKU/oDGnQlwkkCDQIEKFhraioaWphpaI9PxFYg7SEtERDRmJU/9AjrY06VSHeZfX9wZBGsLhunz1eeB4Hz249/nc932f53k5TtM0Sz8Yb+kTIxACIRACIRACIRACGQQQURT3OI6zdHv1LAi6aX8sFjtmXhGbzbYMmCXAnGPkzALhjD6P6MulUCiM1uv1W/x8dTqdG4FA4OsXBXt3syPwd10ZuOMAugLYMJOKtC0ejwt4fh6uA//7w+GwzJQibUPgCpbWGoJ9a7Vad7lczsGkIh1vnYM6pxgX7Xb7cigUqjGlSAecFolEtjHey7JcymQyk0xXdsDsA+ai0WiUk8nkDNMtCmCOeJ4/URSlBJgFpnstJIEzDCVVVVeYBcHm5lH1RSyxOUEQ8kxlrbYVi0VrpVLJwp1C9vIFg8EPo+Y3DUSSJFu1Wi3g/pDL5Vr1er2fRqZfU0Cy2ewI0u413Jrb7V73eDyq0XXkz0FQCMdQ1SW4L8hYW7jfYq5FSafTEwj0EcE/R6PRzZ8QTNSRVCo13Ww2nwByAyV2mDyzJxKJWRS8ss4DJQ6YPFgBYh574gHPPQREvIu6Ysi8VqPfjN6uI7hdQFyaXWkNvURR9P3H/Bx9QyQQAiEQAiEQAiEQAiGQgQH5FmAAnG5iNuw7AaQAAAAASUVORK5CYII=" alt="다음목록">
+                </button>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-area">
+                <div class="footer-link">
+                    <ul>
+                        <li>회사소개</li>
+                        <li>서비스 소개</li>
+                        <li>이용약관</li>
+                        <li>개인정보 처리방침</li>
+                        <li>고객센터</li>
+                        <li>이벤트</li>
+                    </ul>
+                    <div class="footer-link-select-logo">
+                        <label for="wavve-logo">
+                            <img src="https://www.wavve.com/img/ico-footer-wavve-on.d4912b54.svg" alt="wavve on logo">
+                        </label>
+                    </div>
+                    <select class="footer-link-select" id="wavve-logo">
+                        <option>웨이브온 서비스 소개</option>
+                        <option>웨이브온 PC방 서비스</option>
+                        <option>웨이브온 도서관 서비스</option>
+                        <option>웨이브온 병원 서비스</option>
+                        <option>웨이브온 숙박 서비스</option>
+                        <option>웨이브온 일반 서비스</option>
+                    </select>
+                    <div class="facebook-link">
+                        <a href="https://www.facebook.com/wavve.official/" target="_blank" rel="noopener noreferrer">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABXUExURUdwTCcnJyYmJiUlJScnJyYmJiYmJiUlJScnJy4uLiUlJVVVVf///ysrKyYmJiYmJiUlJSUlJf///zMzM+bm5rm5uUlJSTw8PJOTk8fHx6Ojo/Dw8GlpaSKgx6gAAAARdFJOUwA3jtT6yH/sXRCpAwEe33P+GdQUZQAAAatJREFUWMOtl9mWwiAMhil7Udumi6067/+cU3EZdSCB4n/Vczz5TEICCWMR1VY71RgpTaOctjXLUsVFBy/qoBO8SrWuWwFBiTbFj1obiMpoCrG3iLlH2D1mf1BASh2Q3BlIkIlm00pIkrRB8x2HZPFdwN5Bhtx/Aocs8c//t5CpjzxUMhcg387iYCBb5qUe9go2SP3VpIVNeqahxgMYjlcNgSAenaUx62XsvZbAj5p2YL6bhwF3F1rEgVOPAaD1ABG3/+lxgPA1hDgw3a0vl0sQABXRBLcMnAe0JZAIpLcfkX9YY6g75Aw94IQAuhqtwgSAxauIBKy15Mo8cCzWiMu46naI168xcmEo1kQA5/5NsaNomEkDxOIwTKYBzrFSSQUsUUAshGGe5+PN+/VrltEQGvIYJ6wOGqbKACqhkFCASyjlCS9lWwawCe084e2MXSg0QOBXGg3g+KVKAyr8WicBgnhYSEBLPG0U4PG66q0ATT7v/mGfKQfKB4zyEad4yCof8zakwX551P3CsF087pcvHKsPpStP+dJVvvaVL55fWH2DyzdkLd956/8vx6XV0bOYnOQAAAAASUVORK5CYII=" alt="Wavve 페이스북">
+                        </a>
+                    </div>
+                    <div class="naver-link">
+                        <a href="http://m.post.naver.com/my.nhn?memberNo=12375258" target="_blank" rel="noopener noreferrer">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABOUExURUdwTCYmJicnJyUlJSYmJicnJyYmJiUlJS0tLSYmJiYmJigoKCUlJSUlJf7+/iUlJbm5ufHx8VtbW3h4eOTk5DIyMikpKZ+fn0VFRczMzO6Le3EAAAAOdFJOUwCON9T5YcjsFHvfU6WxjM/C1AAAAa5JREFUWMOtl+uSgyAMhRGRi1qj2Gp9/xdd7bqtFxJw0/OjM52RzyQcJBECka1crUujlCl17SorLklmORyUZzJ1tXWn1SvD2aTlBlCZOKIglr8QBf16DVFpIghpIEEGrWahIEkKSSODZGWh9Te4oBvr/cEYCrioQx2kugpQu72wBi7LbP1w8k8T0MlRVAFSAJ8yBBJIAryTcPA/ADi8gmmANYRAACug67r1JwxYQ8gxQAvwuDc9QIsB8peHgAAMngSAxA7BHwBgJAEZksEGMHgKMOdggQL4YfmHA8CKigT0YwRQBTdxA2g8DXCijgDuDxJQC40D4kZajmRJAGJWnlUKwwMYoXgAxQewUyiBpVJoHkAjRmrPGbSIkcJWnj8kBy2ODFo5fJjAHwEekMNkkeTG/foRecwiH5RZ03b9NCCNG3GvP7sN4Enc8pKzixL7rCcqRy+WfR2xCq4XC94cTHQF37crGsKvnRALfS5XIoRlJ7pnvEfBOyyPWnDfZ+FHsu+Jg5jUZA1DNIFvtHn8RpPf6vKbbX67zx84+CMPf+jij31fGDz5o+8Xhu9r4/8P6gi556iJuXoAAAAASUVORK5CYII=" alt="Wavve 네이버 포스트">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-info">
+                    <span>콘텐츠웨이브 주식회사</span> | <span>대표이사 이태현</span> | <span>고객센터 1599-3709 (평일 09:00~18:00 / 점심시간 12:00~13:00 / 주말 및 공휴일 휴무)</span><br/>
+                    <span>사업자등록번호 220-88-38020</span> | <span>호스팅서비스제공자 : 마이크로소프트 유한회사, 구글클라우드코리아 유한회사, 아마존웹서비시즈코리아 유한회사</span><br/>
+                    <span>통신판매업 신고번호 : 제 2021-서울영등포-0585호</span> | <span>통신판매업 정보 공개 : http://www.ftc.go.kr/bizCommPop.do?wrkr_no=220-88-38020</span><br/>
+                    <address>서울특별시 영등포구 여의나루로 60 포스트타워 19층</address> | <span>전자우편주소 : helpdesk@wavve.com</span><br/>
+                    <span>Copyright&copy; 콘텐츠웨이브(주) All rights reserved.</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="../assets/js/header.js"></script>
+    <script src="../assets/js/footer.js"></script>
+    <script>
+        $(function(){
+            // 스위퍼 버튼 생성
+            $('.content-swiper').hover(
+                function() {
+                    $(this).find('.swiper-button-prev').stop(true, true).animate({ left: '0px' }, 300);
+                    $(this).find('.swiper-button-next').stop(true, true).animate({ right: '0px' }, 300);
+                },
+                function() {
+                    $(this).find('.swiper-button-prev').stop(true, true).animate({ left: '-40px' }, 300);
+                    $(this).find('.swiper-button-next').stop(true, true).animate({ right: '-40px' }, 300);
+                }
+            );
+        });
+        // 셀렉트 페이지 이동
+        document.querySelector('.drama-select').addEventListener('change', function() {
+            var selectedValue = this.value;
+            switch (selectedValue) {
+                case "1":
+                    window.location.href = "../category_infinity/category_infinity.html";
+                    break;
+                case "2":
+                    window.location.href = "../category_infinity/category_infinity.html";
+                    break;
+                case "3":
+                window.location.href = "../category_infinity/category_infinity.html";
+                    break;
+                case "4":
+                window.location.href = "../category_infinity/category_infinity.html";
+                    break;
+                case "5":
+                    window.location.href = "../category_infinity/category_infinity.html";
+                    break;
+                case "6":
+                    window.location.href = "../category_infinity/category_infinity.html";
+                    break;
+                case "7":
+                    window.location.href = "../category_infinity/category_infinity.html";
+                    break;
+                case "8":
+                    window.location.href = "../category_infinity/category_infinity.html";
+                    break;
+            }
+        });
+    </script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var content_swiper = new Swiper('.content-swiper', {
+            slidesPerView: 5,
+            slidesPerGroup: 5,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        var announcement_swiper = new Swiper('.announcement-swiper .swiper', {
+            loop: true,
+            slidesPerView: 1,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            direction: 'vertical', // 상하(세로) 방향 슬라이드 설정
+            navigation: {
+                nextEl: '.next-button-area',
+                prevEl: '.prev-button-area',
+            },
+        });
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+ /** 공지사항S */
+
+ .announcement {
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid rgb(56, 56, 56);
+    border-bottom: 1px solid rgb(56, 56, 56);
+    color: rgb(133, 133, 133);
+
+    background-color: rgb(30, 30, 30);
+}
+.announcement > div{
+    width: 1240px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+
+    /* background-color: red; */
+}
+.announcement > div > .title{
+    width: 120px;
+    height: 100%;
+    line-height: 50px;
+
+    /* background-color: red; */
+}
+.announcement > div > .announcement-swiper{
+    width: 1040px;
+    height: 100%;
+    line-height: 50px;
+
+    /* background-color: red; */
+}
+.announcement > div > .announcement-swiper > .swiper{
+    width: 700px;
+    height: 50px;
+    line-height: 50px;
+    margin-left: 0px;
+
+    /* background-color: rgb(141, 60, 60); */
+}
+.announcement-swiper > .swiper .swiper-slide {
+    text-align: left;
+    text-indent: 5px;
+    font-size: 15px;
+    /* background: #fff; */
+}
+.announcement > div > .prev-button-area {
+    width: 50px;
+    height: 100%;
+    border-left: 1px solid rgb(56, 56, 56);
+    border-right: 1px solid rgb(56, 56, 56);
+    cursor: pointer;
+}
+.announcement > div > .next-button-area {
+    width: 50px;
+    height: 100%;
+    border-right: 1px solid rgb(56, 56, 56);
+    cursor: pointer;
+}
+
+/** 공지사항E */
+
+/** 풋터S */
+
+footer {
+    width: 100%;
+    min-height: 200px;
+    color: rgb(112, 112, 112);
+    /* background-color: red; */
+}
+footer .footer-area {
+    width: 1240px;
+    height: 100%;
+    margin: auto;
+    /* background-color: rgb(206, 107, 107); */
+}
+footer .footer-area .footer-link {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    /* background-color: rgb(194, 194, 194); */
+}
+footer .footer-area .footer-link ul{
+    display: flex;
+    margin-right: 290px;
+    /* background-color: rgb(153, 153, 153); */
+}
+footer .footer-area .footer-link ul li {
+    height: 60px;
+    line-height: 60px;
+    cursor: pointer;
+    margin-right: 25px;
+    font-size: 14px;
+    display: block;
+    /* background-color: rgb(153, 153, 153); */
+}
+footer .footer-area .footer-link ul li:hover {
+    color: rgb(255, 255, 255);
+}
+footer .footer-area .footer-link .footer-link-select-logo {
+    width: 100px;
+    height: 60px;
+    display: flex;
+    /* background-color: rgb(194, 194, 194); */
+}
+footer .footer-area .footer-link .footer-link-select-logo label {
+    width: 100px;
+    height: 40px;
+    margin-top: 10px;
+    /* background-color: rgb(194, 194, 194); */
+}
+footer .footer-area .footer-link .footer-link-select {
+    width: 230px;
+    height: 30px;
+    margin-top: 15px;
+    /* background-color: rgb(194, 194, 194); */
+}
+footer .footer-area .footer-link .facebook-link {
+    width: 35px;
+    height: 35px;
+    margin-top: 13px;
+    margin-left: 10px;
+    /* background-color: rgb(194, 194, 194); */
+}
+footer .footer-area .footer-link .facebook-link img {
+    max-width: 100%;
+}
+footer .footer-area .footer-link .naver-link {
+    width: 35px;
+    height: 35px;
+    margin-top: 13px;
+    margin-left: 10px;
+    /* background-color: rgb(194, 194, 194); */
+}
+footer .footer-area .footer-link .naver-link img {
+    max-width: 100%;
+}
+
+footer .footer-area .footer-info {
+    width: 100%;
+    height: 200px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+}
+
+footer .footer-area .footer-info address{
+    display: inline-block;
+}
+
+/** 풋터E */

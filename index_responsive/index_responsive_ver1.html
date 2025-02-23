@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="description" content="Wavve 사이트 clone 작업물">
+    <meta name="keywords" content="Wavve, clone작업물">
+    <meta name="author" content="Lee gi hun">
+    <title>My Web Page</title>
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/swiper_css.css" />
+
+    <style>
+        /** 메인S */
+        /* 모바일 */
+        @media (max-width: 1299px) {
+            /** 헤더S */
+            header {
+                width: 100%;
+                min-width: 480px;
+                height: 70px;
+                position: fixed;
+                z-index: 1000;
+                background-color: rgb(30, 30, 30);
+            }
+            header > .header {
+                width: 1270px;
+                height: 70px;
+                margin: auto;
+                display: flex;
+                background-color: rgb(30, 30, 30);
+            }
+            header > .header > .logo{
+                width: 200px;
+                height: 47px;
+                padding-top: 23px;
+                margin-left: 20px;
+                /* background-color: rgb(90, 209, 79); */
+            }
+            header > .header > .logo > .logo-box{
+                width: 110px;
+                height: 30px;
+                /* background-color: rgb(128, 190, 123); */
+            }
+            header > .header > .navigator{
+                width: 990px;
+                height: 70px;
+                display: none;
+                /* background-color: rgb(0, 255, 242); */
+            }
+            header > .header > .navigator > ul > li > a{
+                display: block;
+                width: auto;
+                height: 70px;
+                float: left;
+                line-height: 70px;
+                padding-right: 40px;
+                font-size: 18px;
+                font-weight: 400;
+                color: rgb(179, 179, 179);
+                cursor: pointer;
+                /* background-color: rgb(0, 255, 149); */
+            }
+            header > .header > .navigator > ul > li > a:hover{
+                color: rgb(255, 255, 255);
+                /* background-color: rgb(0, 255, 149); */
+            }
+            header > .header > .info{
+                width: 80px;
+                height: 70px;
+                position: absolute;
+                right: 10px;
+                /* background-color: rgb(204, 0, 255); */
+            }
+            header > .header > .info > nav{
+                width: 40px;
+                height: 48px;
+                float: left;
+                user-select: none;
+                padding-top: 22px;
+                /* background-color: rgb(214, 82, 247); */
+            }
+
+            /* 검색 */
+            header > .header > .info > .search{
+                position: relative;
+            }
+            header > .header > .info > .search > .search-button{
+                cursor: pointer;
+            }
+
+            header > .header > .info > .search  .search-area{
+                width: 310px;
+                height: 42px;
+
+                position: absolute;
+                top: -50px;
+                right: 15px;
+                display: flex;
+                background-color: rgba(0, 0, 0, 0);
+
+                overflow: hidden;
+            }
+            header > .header > .info > .search  .search-box{
+                width: 300px;
+                height: 40px;
+                
+                display: flex;
+                border: 1px solid rgb(107, 107, 107);
+                background-color: rgb(0, 0, 0);
+            }
+            header > .header > .info > .search  .search-t{
+                width: 80px;
+                height: 40px;
+
+                background: linear-gradient(90deg, rgba(27, 27, 27, 0), #1b1b1b);
+            }
+
+            header > .header > .info > .search  .search-box  svg{
+                margin-top: 10px;
+                margin-left: 10px;
+                margin-right: 5px;
+            }
+            header > .header > .info > .search  .search-box  input{
+                width: 220px;
+                height: 25px;
+                display: block;
+                border: none;
+                outline: none; /* 포커스 시 테두리도 제거 */
+                color: white;
+                margin-top: 7px;
+                
+                background-color: rgb(0, 0, 0);
+            }
+
+            /* 내정보 */
+            .my-info-box {
+                width: 200px;
+                height: 165px;
+                display: none;
+                position: absolute;
+                top: 45px;
+                right: 10px;
+                z-index: 100;
+                background-color: rgb(30, 30, 30);
+            }
+            .my-info-box .my-info-box-area {
+                width: 180px;
+                height: 130px;
+                margin: auto;
+                margin-top: 35px;
+
+                /* background-color: rgb(116, 77, 77); */
+            }
+            .my-info-box .my-info-box-area div {
+                width: 200px;
+                height: 40px;
+                text-align: left;
+                text-indent: 10px;
+                font-weight: 350;
+                font-size: 15px;
+                line-height: 40px;
+                color: rgb(179, 179, 179);
+
+                /* background-color: rgb(116, 77, 77); */
+            }
+            .my-info-box .my-info-box-area div:hover {
+                cursor: pointer;
+                color: rgb(255, 255, 255);
+            }
+
+            /** 헤더E */
+
+
+            .warp {
+                background-color: rgb(30, 30, 30);
+            }
+            
+            main {
+                width: 100%;
+                min-height: 1300px;
+                padding-top: 70px;
+                background-color: rgb(30, 30, 30);
+            }
+            main > .main{
+                width: 100%;
+                min-height: 800px;
+                /* background-color: rgb(0, 255, 149); */
+            }
+            
+            /* swiper */
+            .swiper-container {
+                position: relative;
+                width: 100%;
+                max-width: 470px;
+                height: 300px;
+                margin: auto;
+                margin-bottom: 100px;
+            }
+            .swiper-container > .swiper-wrapper > .swiper-slide {
+                width: 470px !important;
+                height: 300px !important;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .swiper-container > .swiper-wrapper > .swiper-slide img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease, opacity 0.3s ease;
+                border-radius: 10px;
+            }
+            /* 가운데 슬라이드 확대 효과 */
+            .swiper-slide-active img {
+                /* transform: scale(1.1); */
+                /* box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5); */
+            }
+            .swiper-pagination {
+                width: 30px;
+                font-size: 12px;
+                font-weight: bold;
+                color: white;
+                position: absolute;
+                bottom: 10px;
+                left: 1170px;
+                background: rgba(0, 0, 0, 0.5);
+                padding: 5px 10px;
+                border-radius: 10px;
+            }
+            /* 현재 페이지 색상 */
+            .swiper-pagination-current {
+                color: #ffffff;  /* 현재 페이지 텍스트 색상 */
+            }
+            /* 전체 페이지 색상 */
+            .swiper-pagination-total {
+                color: #a5a5a5;  /* 전체 페이지 텍스트 색상 */
+            }
+            .content {
+                width: 100%;
+                height: 460px;
+                /* background-color: red; */
+            }
+            .content > .content-area {
+                width: 460px;
+                margin: auto;
+                /* background-color: rgb(206, 107, 107); */
+            }
+            .content > .content-area > .head-box {
+                width: 100%;
+                height: 50px;
+                position: relative;
+                /* background-color: rgb(255, 0, 0); */
+            }
+            .content > .content-area > .head-box > .head-box-title {
+                width: 1240px;
+                height: 50px;
+                color: white;
+                font-size: 13px;
+                /* background-color: rgb(85, 85, 85); */
+            }
+            .content > .content-area > .head-box > .head-box-more-button {
+                width: 70px;
+                height: 37px;
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                user-select: none;
+                padding-top: 13px;
+                /* background-color: rgb(119, 119, 119); */
+            }
+            .content > .content-area > .head-box > .head-box-more-button > .more-button {
+                display: block;
+                width: 65px;
+                height: 24px;
+                background-color: red;
+                color: rgb(179, 179, 179);
+                background: url(https://www.wavve.com/img/icon-arrow-see-all-default.01e1b585.svg) no-repeat 100%;
+            }
+            .content > .content-area > .content-list {
+                overflow: hidden;
+                /* background-color: rgb(202, 202, 202); */
+            }
+            .swiper-wrapper {
+                user-select: none;
+            }
+            .content-swiper {
+                position: relative;
+            }
+            .content-swiper .swiper-button-next{
+                width: 35px;
+                height: 50px;
+                background-color: rgba(65, 65, 65, 0.568);
+                top: 160px;
+                right: -40px;
+            }
+            .content-swiper .swiper-button-prev{
+                width: 35px;
+                height: 50px;
+                background-color: rgba(65, 65, 65, 0.568);
+                top: 160px;
+                left: -40px;
+            }
+            .content-swiper .swiper-slide {
+                /* width: 220px !important;
+                height: 320px !important;
+                margin-right: 10px; */
+                width: 220px !important;
+                height: 320px !important;
+                margin-right: 5px;
+                margin-left: 5px;
+                text-align: center;
+                border-radius: 10px 10px 10px 10px;
+                font-size: 18px;
+                /* background: #fff; */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                cursor: pointer;
+            }
+            .content-swiper .swiper-slide img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                border-radius: 10px 10px 10px 10px;
+                object-fit: cover;
+                transition: transform 0.2s ease-in-out;
+            }
+            .content-swiper .swiper-slide img:hover {
+                transform: scale(1.05);
+            }
+
+             /** 공지사항S */
+
+            .announcement {
+                width: 100%;
+                min-width: 480px;
+                height: 50px;
+                border-top: 1px solid rgb(56, 56, 56);
+                border-bottom: 1px solid rgb(56, 56, 56);
+                color: rgb(133, 133, 133);
+
+                background-color: rgb(30, 30, 30);
+            }
+            .announcement > div{
+                position: relative;
+                min-width: 480px;
+                height: 100%;
+                margin: auto;
+                display: flex;
+                margin-left: 20px;
+
+                /* background-color: red; */
+            }
+            .announcement > div > .title{
+                display: none;
+                width: 120px;
+                height: 100%;
+                line-height: 50px;
+
+                /* background-color: red; */
+            }
+            .announcement > div > .announcement-swiper{
+                width: 1040px;
+                min-width: 300px;
+                height: 100%;
+                line-height: 50px;
+
+                /* background-color: red; */
+            }
+            .announcement > div > .announcement-swiper > .swiper{
+                width: 700px;
+                height: 50px;
+                line-height: 50px;
+                margin-left: 0px;
+
+                /* background-color: rgb(141, 60, 60); */
+            }
+            .announcement-swiper > .swiper .swiper-slide {
+                text-align: left;
+                text-indent: 5px;
+                font-size: 15px;
+                /* background: #fff; */
+            }
+            .announcement > div > .prev-button-area {
+                position: absolute;
+                right: 90px;
+                z-index: 200;
+                width: 50px;
+                height: 100%;
+                border-left: 1px solid rgb(56, 56, 56);
+                border-right: 1px solid rgb(56, 56, 56);
+                cursor: pointer;
+            }
+            .announcement > div > .next-button-area {
+                position: absolute;
+                right: 40px;
+                z-index: 200;
+                width: 50px;
+                height: 100%;
+                border-right: 1px solid rgb(56, 56, 56);
+                cursor: pointer;
+            }
+
+            /** 공지사항E */
+
+            /** 풋터S */
+
+            footer {
+                width: 100%;
+                min-height: 200px;
+                color: rgb(112, 112, 112);
+                /* background-color: red; */
+            }
+            footer .footer-area {
+                min-width: 450px;
+                height: 100%;
+                margin: auto;
+                padding-left: 20px;
+                padding-right: 30px;
+                /* background-color: rgb(206, 107, 107); */
+            }
+            footer .footer-area .footer-link {
+                width: 100%;
+                height: 60px;
+                display: none;
+                /* background-color: rgb(194, 194, 194); */
+            }
+            footer .footer-area .footer-link ul{
+                display: flex;
+                margin-right: 290px;
+                /* background-color: rgb(153, 153, 153); */
+            }
+            footer .footer-area .footer-link ul li {
+                height: 60px;
+                line-height: 60px;
+                cursor: pointer;
+                margin-right: 25px;
+                font-size: 14px;
+                display: block;
+                /* background-color: rgb(153, 153, 153); */
+            }
+            footer .footer-area .footer-link ul li:hover {
+                color: rgb(255, 255, 255);
+            }
+            footer .footer-area .footer-link .footer-link-select-logo {
+                width: 100px;
+                height: 60px;
+                display: flex;
+                /* background-color: rgb(194, 194, 194); */
+            }
+            footer .footer-area .footer-link .footer-link-select-logo label {
+                width: 100px;
+                height: 40px;
+                margin-top: 10px;
+                /* background-color: rgb(194, 194, 194); */
+            }
+            footer .footer-area .footer-link .footer-link-select {
+                width: 230px;
+                height: 30px;
+                margin-top: 15px;
+                /* background-color: rgb(194, 194, 194); */
+            }
+            footer .footer-area .footer-link .facebook-link {
+                width: 35px;
+                height: 35px;
+                margin-top: 13px;
+                margin-left: 10px;
+                /* background-color: rgb(194, 194, 194); */
+            }
+            footer .footer-area .footer-link .facebook-link img {
+                max-width: 100%;
+            }
+            footer .footer-area .footer-link .naver-link {
+                width: 35px;
+                height: 35px;
+                margin-top: 13px;
+                margin-left: 10px;
+                /* background-color: rgb(194, 194, 194); */
+            }
+            footer .footer-area .footer-link .naver-link img {
+                max-width: 100%;
+            }
+
+            footer .footer-area .footer-info {
+                width: 100%;
+                height: 200px;
+                margin-top: 20px;
+                font-family: Arial, sans-serif;
+                font-size: 11px;
+            }
+
+            footer .footer-area .footer-info address{
+                display: inline-block;
+            }
+
+            /** 풋터E */
+        }
+
+        /* 데스크탑 */
+        @media (min-width: 1300px) {
+            /** 헤더S */
+            header {
+                width: 100%;
+                height: 70px;
+                position: fixed;
+                z-index: 1000;
+                background-color: rgb(30, 30, 30);
+            }
+            header > .header {
+                width: 1270px;
+                height: 70px;
+                margin: auto;
+                display: flex;
+                background-color: rgb(30, 30, 30);
+            }
+            header > .header > .logo{
+                width: 200px;
+                height: 47px;
+                padding-top: 23px;
+                /* background-color: rgb(90, 209, 79); */
+            }
+            header > .header > .logo > .logo-box{
+                width: 110px;
+                height: 30px;
+                /* background-color: rgb(128, 190, 123); */
+            }
+            header > .header > .navigator{
+                width: 990px;
+                height: 70px;
+                /* background-color: rgb(0, 255, 242); */
+            }
+            header > .header > .navigator > ul > li > a{
+                display: block;
+                width: auto;
+                height: 70px;
+                float: left;
+                line-height: 70px;
+                padding-right: 40px;
+                font-size: 18px;
+                font-weight: 400;
+                color: rgb(179, 179, 179);
+                cursor: pointer;
+                /* background-color: rgb(0, 255, 149); */
+            }
+            header > .header > .navigator > ul > li > a:hover{
+                color: rgb(255, 255, 255);
+                /* background-color: rgb(0, 255, 149); */
+            }
+            header > .header > .info{
+                width: 80px;
+                height: 70px;
+                position: relative;
+                /* background-color: rgb(204, 0, 255); */
+            }
+            header > .header > .info > nav{
+                width: 40px;
+                height: 48px;
+                float: left;
+                user-select: none;
+                padding-top: 22px;
+                /* background-color: rgb(214, 82, 247); */
+            }
+
+            /* 검색 */
+            header > .header > .info > .search{
+                position: relative;
+            }
+            header > .header > .info > .search > .search-button{
+                cursor: pointer;
+            }
+
+            header > .header > .info > .search  .search-area{
+                width: 310px;
+                height: 42px;
+
+                position: absolute;
+                top: -50px;
+                right: 15px;
+                display: flex;
+                background-color: rgba(0, 0, 0, 0);
+
+                overflow: hidden;
+            }
+            header > .header > .info > .search  .search-box{
+                width: 300px;
+                height: 40px;
+                
+                display: flex;
+                border: 1px solid rgb(107, 107, 107);
+                background-color: rgb(0, 0, 0);
+            }
+            header > .header > .info > .search  .search-t{
+                width: 80px;
+                height: 40px;
+
+                background: linear-gradient(90deg, rgba(27, 27, 27, 0), #1b1b1b);
+            }
+
+            header > .header > .info > .search  .search-box  svg{
+                margin-top: 10px;
+                margin-left: 10px;
+                margin-right: 5px;
+            }
+            header > .header > .info > .search  .search-box  input{
+                width: 220px;
+                height: 25px;
+                display: block;
+                border: none;
+                outline: none; /* 포커스 시 테두리도 제거 */
+                color: white;
+                margin-top: 7px;
+                
+                background-color: rgb(0, 0, 0);
+            }
+
+            /* 내정보 */
+            .my-info-box {
+                width: 200px;
+                height: 165px;
+                display: none;
+                position: absolute;
+                top: 45px;
+                right: 10px;
+                z-index: 100;
+                background-color: rgb(30, 30, 30);
+            }
+            .my-info-box .my-info-box-area {
+                width: 180px;
+                height: 130px;
+                margin: auto;
+                margin-top: 35px;
+
+                /* background-color: rgb(116, 77, 77); */
+            }
+            .my-info-box .my-info-box-area div {
+                width: 200px;
+                height: 40px;
+                text-align: left;
+                text-indent: 10px;
+                font-weight: 350;
+                font-size: 15px;
+                line-height: 40px;
+                color: rgb(179, 179, 179);
+
+                /* background-color: rgb(116, 77, 77); */
+            }
+            .my-info-box .my-info-box-area div:hover {
+                cursor: pointer;
+                color: rgb(255, 255, 255);
+            }
+
+            /** 헤더E */
+
+
+            .warp {
+                background-color: rgb(30, 30, 30);
+            }
+            
+            main {
+                width: 100%;
+                min-height: 1300px;
+                padding-top: 70px;
+                background-color: rgb(30, 30, 30);
+            }
+            main > .main{
+                width: 100%;
+                min-height: 800px;
+                /* background-color: rgb(0, 255, 149); */
+            }
+            
+            /* swiper */
+            .swiper-container {
+                position: relative;
+                width: 100%;
+                max-width: 1240px;
+                height: 504px;
+                margin: auto;
+                margin-bottom: 100px;
+            }
+            .swiper-container > .swiper-wrapper > .swiper-slide {
+                width: 1240px !important;
+                height: 504px !important;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .swiper-container > .swiper-wrapper > .swiper-slide img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease, opacity 0.3s ease;
+                border-radius: 10px;
+            }
+            /* 가운데 슬라이드 확대 효과 */
+            .swiper-slide-active img {
+                /* transform: scale(1.1); */
+                /* box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5); */
+            }
+            .swiper-pagination {
+                width: 30px;
+                font-size: 12px;
+                font-weight: bold;
+                color: white;
+                position: absolute;
+                bottom: 10px;
+                left: 1170px;
+                background: rgba(0, 0, 0, 0.5);
+                padding: 5px 10px;
+                border-radius: 10px;
+            }
+            /* 현재 페이지 색상 */
+            .swiper-pagination-current {
+                color: #ffffff;  /* 현재 페이지 텍스트 색상 */
+            }
+            /* 전체 페이지 색상 */
+            .swiper-pagination-total {
+                color: #a5a5a5;  /* 전체 페이지 텍스트 색상 */
+            }
+            .content {
+                width: 100%;
+                height: 500px;
+                margin-bottom: 20px;
+                /* background-color: red; */
+            }
+            .content > .content-area {
+                width: 1240px;
+                height: 500px;
+                margin: auto;
+                /* background-color: rgb(206, 107, 107); */
+            }
+            .content > .content-area > .head-box {
+                width: 1240px;
+                height: 50px;
+                position: relative;
+                /* background-color: rgb(255, 0, 0); */
+            }
+            .content > .content-area > .head-box > .head-box-title {
+                width: 1240px;
+                height: 50px;
+                color: white;
+                font-size: 17px;
+                /* background-color: rgb(85, 85, 85); */
+            }
+            .content > .content-area > .head-box > .head-box-more-button {
+                width: 70px;
+                height: 37px;
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                user-select: none;
+                padding-top: 13px;
+                /* background-color: rgb(119, 119, 119); */
+            }
+            .content > .content-area > .head-box > .head-box-more-button > .more-button {
+                display: block;
+                width: 65px;
+                height: 24px;
+                background-color: red;
+                color: rgb(179, 179, 179);
+                background: url(https://www.wavve.com/img/icon-arrow-see-all-default.01e1b585.svg) no-repeat 100%;
+            }
+            .content > .content-area > .content-list {
+                width: 1240px;
+                height: 450px;
+                overflow: hidden;
+                /* background-color: rgb(202, 202, 202); */
+            }
+            .swiper-wrapper {
+                user-select: none;
+            }
+            .content-swiper {
+                position: relative;
+            }
+            .content-swiper .swiper-button-next{
+                width: 35px;
+                height: 50px;
+                background-color: rgba(65, 65, 65, 0.568);
+                top: 160px;
+                right: -40px;
+            }
+            .content-swiper .swiper-button-prev{
+                width: 35px;
+                height: 50px;
+                background-color: rgba(65, 65, 65, 0.568);
+                top: 160px;
+                left: -40px;
+            }
+            .content-swiper .swiper-slide {
+                width: 240px !important;
+                height: 360px !important;
+                margin-right: 10px;
+                text-align: center;
+                border-radius: 10px 10px 10px 10px;
+                font-size: 18px;
+                /* background: #fff; */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                cursor: pointer;
+            }
+            .content-swiper .swiper-slide img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                border-radius: 10px 10px 10px 10px;
+                object-fit: cover;
+                transition: transform 0.2s ease-in-out;
+            }
+            .content-swiper .swiper-slide img:hover {
+                transform: scale(1.05);
+            }
+
+             /** 공지사항S */
+
+            .announcement {
+                width: 100%;
+                height: 50px;
+                border-top: 1px solid rgb(56, 56, 56);
+                border-bottom: 1px solid rgb(56, 56, 56);
+                color: rgb(133, 133, 133);
+
+                background-color: rgb(30, 30, 30);
+            }
+            .announcement > div{
+                width: 1240px;
+                height: 100%;
+                margin: auto;
+                display: flex;
+
+                /* background-color: red; */
+            }
+            .announcement > div > .title{
+                width: 120px;
+                height: 100%;
+                line-height: 50px;
+
+                /* background-color: red; */
+            }
+            .announcement > div > .announcement-swiper{
+                width: 1040px;
+                height: 100%;
+                line-height: 50px;
+
+                /* background-color: red; */
+            }
+            .announcement > div > .announcement-swiper > .swiper{
+                width: 700px;
+                height: 50px;
+                line-height: 50px;
+                margin-left: 0px;
+
+                /* background-color: rgb(141, 60, 60); */
+            }
+            .announcement-swiper > .swiper .swiper-slide {
+                text-align: left;
+                text-indent: 5px;
+                font-size: 15px;
+                /* background: #fff; */
+            }
+            .announcement > div > .prev-button-area {
+                width: 50px;
+                height: 100%;
+                border-left: 1px solid rgb(56, 56, 56);
+                border-right: 1px solid rgb(56, 56, 56);
+                cursor: pointer;
+            }
+            .announcement > div > .next-button-area {
+                width: 50px;
+                height: 100%;
+                border-right: 1px solid rgb(56, 56, 56);
+                cursor: pointer;
+            }
+
+            /** 공지사항E */
+
+            /** 풋터S */
+
+            footer {
+                width: 100%;
+                min-height: 200px;
+                color: rgb(112, 112, 112);
+                /* background-color: red; */
+            }
+            footer .footer-area {
+                width: 1240px;
+                height: 100%;
+                margin: auto;
+                /* background-color: rgb(206, 107, 107); */
+            }
+            footer .footer-area .footer-link {
+                width: 100%;
+                height: 60px;
+                display: flex;
+                /* background-color: rgb(194, 194, 194); */
+            }
+            footer .footer-area .footer-link ul{
+                display: flex;
+                margin-right: 290px;
+                /* background-color: rgb(153, 153, 153); */
+            }
+            footer .footer-area .footer-link ul li {
+                height: 60px;
+                line-height: 60px;
+                cursor: pointer;
+                margin-right: 25px;
+                font-size: 14px;
+                display: block;
+                /* background-color: rgb(153, 153, 153); */
+            }
+            footer .footer-area .footer-link ul li:hover {
+                color: rgb(255, 255, 255);
+            }
+            footer .footer-area .footer-link .footer-link-select-logo {
+                width: 100px;
+                height: 60px;
+                display: flex;
+                /* background-color: rgb(194, 194, 194); */
+            }
+            footer .footer-area .footer-link .footer-link-select-logo label {
+                width: 100px;
+                height: 40px;
+                margin-top: 10px;
+                /* background-color: rgb(194, 194, 194); */
+            }
+            footer .footer-area .footer-link .footer-link-select {
+                width: 230px;
+                height: 30px;
+                margin-top: 15px;
+                /* background-color: rgb(194, 194, 194); */
+            }
+            footer .footer-area .footer-link .facebook-link {
+                width: 35px;
+                height: 35px;
+                margin-top: 13px;
+                margin-left: 10px;
+                /* background-color: rgb(194, 194, 194); */
+            }
+            footer .footer-area .footer-link .facebook-link img {
+                max-width: 100%;
+            }
+            footer .footer-area .footer-link .naver-link {
+                width: 35px;
+                height: 35px;
+                margin-top: 13px;
+                margin-left: 10px;
+                /* background-color: rgb(194, 194, 194); */
+            }
+            footer .footer-area .footer-link .naver-link img {
+                max-width: 100%;
+            }
+
+            footer .footer-area .footer-info {
+                width: 100%;
+                height: 200px;
+                font-family: Arial, sans-serif;
+                font-size: 11px;
+            }
+
+            footer .footer-area .footer-info address{
+                display: inline-block;
+            }
+
+            /** 풋터E */
+
+        }
+
+        /** 메인E */
+        
+    </style>
+</head>
+
+<body>
+    <!-- 타이틀 -->
+    <h1 style="display: block; position: absolute; left: -200000px;">wavve clone 작업물</h1>
+    <!-- 브라우저에 보여질 부분 ↓ -->
+    <div class="warp">
+        <header>
+            <div class="header">
+                <div class="logo">
+                    <div class="logo-box">
+                        <a href="../index_responsive/index_responsive.html"><img src="https://www.wavve.com/img/ci-wavve.5b304973.svg" alt="Wavve" /></a>
+                    </div>
+                </div>
+                <div class="navigator">
+                    <ul>
+                        <li><a href="./category/category.html">드라마</a></li>
+                        <li><a href="./category/category.html">예능</a></li>
+                        <li><a href="./category/category.html">영화</a></li>
+                        <li><a href="./category/category.html">애니</a></li>
+                        <li><a href="./category/category.html">해외시리즈</a></li>
+                        <li><a href="./category/category.html">시사교양</a></li>
+                        <li><a href="./category/category.html">키즈</a></li>
+                        <li><a href="./category/category.html">영화플러스</a></li>
+                        <li><a href="./category/category.html">LIVE</a></li>
+                    </ul>
+                </div>
+                <div class="info">
+                    <nav class="search" id="search">
+                        <button class="search-button">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.4508 8.90796C15.4508 12.4977 12.5396 15.408 8.94985 15.408C5.3611 15.408 2.45081 12.4977 2.45081 8.90796C2.45081 5.31825 5.3611 2.40796 8.94985 2.40796C12.5396 2.40796 15.4508 5.31825 15.4508 8.90796Z" stroke="#A5A5A5" stroke-width="2"></path>
+                                <path d="M14.0474 13.6536L19.7904 19.2229" stroke="#A5A5A5" stroke-width="2" stroke-linecap="round"></path>
+                            </svg>
+                        </button>
+                        <div class="search-area">
+                            <div class="search-t"></div>
+                            <div class="search-box">
+                                <label for="search-input">
+                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M15.4508 8.90796C15.4508 12.4977 12.5396 15.408 8.94985 15.408C5.3611 15.408 2.45081 12.4977 2.45081 8.90796C2.45081 5.31825 5.3611 2.40796 8.94985 2.40796C12.5396 2.40796 15.4508 5.31825 15.4508 8.90796Z" stroke="#A5A5A5" stroke-width="2"></path>
+                                        <path d="M14.0474 13.6536L19.7904 19.2229" stroke="#A5A5A5" stroke-width="2" stroke-linecap="round"></path>
+                                    </svg>
+                                </label>
+                                <input type="text" id="search-input" value="" autocomplete="off" placeholder="제목, 장르, 배우로 찾아보세요 " />
+                            </div>
+                        </div>
+                    </nav>
+                    <nav>
+                        <button class="my-info-button" id="my-info-button">
+                            <svg data-v-17d2183c="" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-53c40c25="">
+                                <rect x="7.5" y="2" width="7" height="8" rx="3.5" stroke="#A5A5A5" stroke-width="2"></rect>
+                                <path d="M2 19V19C2.58146 16.0927 5.13416 14 8.09902 14H13.901C16.8658 14 19.4185 16.0927 20 19V19" stroke="#A5A5A5" stroke-width="2" stroke-linecap="round"></path>
+                            </svg>
+                            <div class="my-info-box">
+                                <div class="my-info-box-area">
+                                    <div><img src="./img/" alt="">로그인</div>
+                                    <div><img src="./img/" alt="">이용권</div>
+                                    <div><img src="./img/" alt="">쿠폰등록</div>
+                                </div>
+                            </div>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="main">
+                <!-- Swiper -->
+                <section>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="../assets/img/1735548265770169224.webp" alt="Banner 1"></div>
+                            <div class="swiper-slide"><img src="../assets/img/20230901_banner_151140.webp" alt="Banner 2"></div>
+                            <div class="swiper-slide"><img src="../assets/img/1735548265770169224.webp" alt="Banner 3"></div>
+                            <div class="swiper-slide"><img src="../assets/img/20230901_banner_151140.webp" alt="Banner 4"></div>
+                        </div>
+                        
+                        <!-- 네비게이션 버튼 -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    
+                        <!-- 페이지네이션 (페이지숫자) -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </section>
+
+                <!-- 메인 콘텐츠 -->
+                <section>
+                    <div class="content">
+                        <div class="content-area">
+                            <div class="head-box">
+                                <div class="head-box-title">
+                                    <h2>믿고 보는 웨이브 에디터 추천작</h2>
+                                </div>
+                                <div class="head-box-more-button">
+                                    <a href="javascript:void(0);" class="more-button">더보기</a>
+                                </div>
+                            </div>
+                            <div class="content-list">
+                                <!-- Swiper -->
+                                <div class="content-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202501/1737349885676130594.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202402/1708404301458518711.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202501/1736150225626657444.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202502/1738563313382932047.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202402/1708404301458518711.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                    </div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="content-area">
+                            <div class="head-box">
+                                <div class="head-box-title">
+                                    <h2>오직 웨이브에서</h2>
+                                </div>
+                                <div class="head-box-more-button">
+                                    <a href="javascript:void(0);" class="more-button">더보기</a>
+                                </div>
+                            </div>
+                            <div class="content-list">
+                                <!-- Swiper -->
+                                <div class="content-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="	https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202502/1739322289545626796.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202411/1731633771584736115.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202502/1739322342369620582.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202406/1718364866470443004.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202406/1718364866470443004.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202402/1708404301458518711.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                    </div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="content-area">
+                            <div class="head-box">
+                                <div class="head-box-title">
+                                    <h2>새로 올라온 영화</h2>
+                                </div>
+                                <div class="head-box-more-button">
+                                    <a href="javascript:void(0);" class="more-button">더보기</a>
+                                </div>
+                            </div>
+                            <div class="content-list">
+                                <!-- Swiper -->
+                                <div class="content-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202501/1737349885676130594.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202402/1708404301458518711.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202501/1736150225626657444.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202502/1738563313382932047.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202402/1708404301458518711.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                    </div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="content-area">
+                            <div class="head-box">
+                                <div class="head-box-title">
+                                    <h2>새로 올라온 시리즈</h2>
+                                </div>
+                                <div class="head-box-more-button">
+                                    <a href="javascript:void(0);" class="more-button">더보기</a>
+                                </div>
+                            </div>
+                            <div class="content-list">
+                                <!-- Swiper -->
+                                <div class="content-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="	https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202502/1739322289545626796.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202411/1731633771584736115.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202502/1739322342369620582.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202406/1718364866470443004.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202406/1718364866470443004.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202402/1708404301458518711.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                    </div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="content-area">
+                            <div class="head-box">
+                                <div class="head-box-title">
+                                    <h2>새로 올라온 시리즈</h2>
+                                </div>
+                                <div class="head-box-more-button">
+                                    <a href="javascript:void(0);" class="more-button">더보기</a>
+                                </div>
+                            </div>
+                            <div class="content-list">
+                                <!-- Swiper -->
+                                <div class="content-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="	https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202502/1739322289545626796.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202411/1731633771584736115.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202502/1739322342369620582.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202406/1718364866470443004.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202406/1718364866470443004.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202402/1708404301458518711.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                    </div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="content-area">
+                            <div class="head-box">
+                                <div class="head-box-title">
+                                    <h2>새로 올라온 시리즈</h2>
+                                </div>
+                                <div class="head-box-more-button">
+                                    <a href="javascript:void(0);" class="more-button">더보기</a>
+                                </div>
+                            </div>
+                            <div class="content-list">
+                                <!-- Swiper -->
+                                <div class="content-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="	https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202502/1739322289545626796.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202411/1731633771584736115.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202502/1739322342369620582.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202406/1718364866470443004.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202406/1718364866470443004.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202402/1708404301458518711.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                    </div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="content-area">
+                            <div class="head-box">
+                                <div class="head-box-title">
+                                    <h2>새로 올라온 시리즈</h2>
+                                </div>
+                                <div class="head-box-more-button">
+                                    <a href="javascript:void(0);" class="more-button">더보기</a>
+                                </div>
+                            </div>
+                            <div class="content-list">
+                                <!-- Swiper -->
+                                <div class="content-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="	https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202502/1739322289545626796.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202411/1731633771584736115.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202502/1739322342369620582.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202406/1718364866470443004.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202406/1718364866470443004.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202402/1708404301458518711.webp" alt="예시썸네일"></div>
+                                        <div class="swiper-slide"><img src="https://image.wavve.com/v1/thumbnails/240_360_20_80/meta/image/202309/1694062320658347760.webp" alt="예시썸네일"></div>
+                                    </div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+        </main>
+
+        <div class="announcement">
+            <div>
+                <div class="title">
+                    <h3>공지사항</h3>
+                </div>
+                <div class="announcement-swiper">
+                    <!-- Swiper -->
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">[업데이트] 1월 2주차 업데이트 진행</div>
+                            <div class="swiper-slide">[중지] 2월 중지되는 프로그램 목록</div>
+                            <div class="swiper-slide">[업데이트] 1월 업데이트 프로그램</div>
+                        </div>
+
+                    </div>
+                </div>
+                <button class="prev-button-area">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAlBJREFUaAXtVktrGlEUzvioYqELpRCyiIss7CK7/gJdNMEEQjdSunATfNEEugi0BPoDmkV3iY/4qGIKFUIXDdJmY6kEAv0FdhNw405oScWq0Xx3IQyDEqLn5AFnNvfOnbnf+b7vnHNnZmbkEgfEAXFAHBAHxAFxQBwQB+6iA8lk8i01LxM14FV4iURiZzAYPL/qves+t1x3w6Tvg7yGTOxhfGq3259NijNunzbuAeV6qVQyN5vNj8CcdzqdK4FA4JwSX2GxZwQiHkDEZ8Sy22y2JYhoU4tQeKwZQSk5UEpfEOevpmkvI5FIl0OEwmRr9mKx+Kjf73+DkAbK6QWnCCWEJSP5fN7VarW+IwunELCJcaCCcV7kGcnlcrMQUQX542g0unETIpRBpELS6bS73W6fgHweIrY5M2DEJhMCEYvdbrdqMpk+QMR7YyDuezIhvV5vGWSr6IldbtKj8MmEWK3WTyipBfyCpHBSkeGOIj1qjfTUKhQKD9HoRwjU8Hg8Qa/X2xsVlGONVIgiWC6XbfV6/RBZuXC73QG/3/+fg7gRk1yIClCpVCy1Wu0AU5fD4VgLBoP/jIGp71mEKJKqT9Av+5g+wUnmxyHwh5q8Ho+tKdH4/Vgsto7xF0T9yGazj/WBqedsQoZE8U15DSFfO53Oz0wmMzdcpx7ZSstIFGW2hbVXZrPZFwqFzozPp72/MSGKaDwej6DU3qFnfOFw+Pe05PX72UtLHww9k0SZvVG/9/r1eztPpVKr95a8EBcHxAFxQBwQB8QBcUAcEAdu3YFLPjOyQF+dJGYAAAAASUVORK5CYII=" alt="이전목록">
+                </button>
+                <button class="next-button-area">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTU2RTc3QzVDNUU2MTFFNzhGNzQ4QUM1NTY5RjA2NDMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTU2RTc3QzZDNUU2MTFFNzhGNzQ4QUM1NTY5RjA2NDMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxNTZFNzdDM0M1RTYxMUU3OEY3NDhBQzU1NjlGMDY0MyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxNTZFNzdDNEM1RTYxMUU3OEY3NDhBQzU1NjlGMDY0MyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PvXeOssAAAH+SURBVHja7Jm/SwJhGMe9y0uwMJCCajAiyKU/oDGnQlwkkCDQIEKFhraioaWphpaI9PxFYg7SEtERDRmJU/9AjrY06VSHeZfX9wZBGsLhunz1eeB4Hz249/nc932f53k5TtM0Sz8Yb+kTIxACIRACIRACIRACGQQQURT3OI6zdHv1LAi6aX8sFjtmXhGbzbYMmCXAnGPkzALhjD6P6MulUCiM1uv1W/x8dTqdG4FA4OsXBXt3syPwd10ZuOMAugLYMJOKtC0ejwt4fh6uA//7w+GwzJQibUPgCpbWGoJ9a7Vad7lczsGkIh1vnYM6pxgX7Xb7cigUqjGlSAecFolEtjHey7JcymQyk0xXdsDsA+ai0WiUk8nkDNMtCmCOeJ4/URSlBJgFpnstJIEzDCVVVVeYBcHm5lH1RSyxOUEQ8kxlrbYVi0VrpVLJwp1C9vIFg8EPo+Y3DUSSJFu1Wi3g/pDL5Vr1er2fRqZfU0Cy2ewI0u413Jrb7V73eDyq0XXkz0FQCMdQ1SW4L8hYW7jfYq5FSafTEwj0EcE/R6PRzZ8QTNSRVCo13Ww2nwByAyV2mDyzJxKJWRS8ss4DJQ6YPFgBYh574gHPPQREvIu6Ysi8VqPfjN6uI7hdQFyaXWkNvURR9P3H/Bx9QyQQAiEQAiEQAiEQAiGQgQH5FmAAnG5iNuw7AaQAAAAASUVORK5CYII=" alt="다음목록">
+                </button>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-area">
+                <div class="footer-link">
+                    <ul>
+                        <li>회사소개</li>
+                        <li>서비스 소개</li>
+                        <li>이용약관</li>
+                        <li>개인정보 처리방침</li>
+                        <li>고객센터</li>
+                        <li>이벤트</li>
+                    </ul>
+                    <div class="footer-link-select-logo">
+                        <label for="wavve-logo">
+                            <img src="https://www.wavve.com/img/ico-footer-wavve-on.d4912b54.svg" alt="wavve on logo">
+                        </label>
+                    </div>
+                    <select class="footer-link-select" id="wavve-logo">
+                        <option>웨이브온 서비스 소개</option>
+                        <option>웨이브온 PC방 서비스</option>
+                        <option>웨이브온 도서관 서비스</option>
+                        <option>웨이브온 병원 서비스</option>
+                        <option>웨이브온 숙박 서비스</option>
+                        <option>웨이브온 일반 서비스</option>
+                    </select>
+                    <div class="facebook-link">
+                        <a href="https://www.facebook.com/wavve.official/" target="_blank" rel="noopener noreferrer">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABXUExURUdwTCcnJyYmJiUlJScnJyYmJiYmJiUlJScnJy4uLiUlJVVVVf///ysrKyYmJiYmJiUlJSUlJf///zMzM+bm5rm5uUlJSTw8PJOTk8fHx6Ojo/Dw8GlpaSKgx6gAAAARdFJOUwA3jtT6yH/sXRCpAwEe33P+GdQUZQAAAatJREFUWMOtl9mWwiAMhil7Udumi6067/+cU3EZdSCB4n/Vczz5TEICCWMR1VY71RgpTaOctjXLUsVFBy/qoBO8SrWuWwFBiTbFj1obiMpoCrG3iLlH2D1mf1BASh2Q3BlIkIlm00pIkrRB8x2HZPFdwN5Bhtx/Aocs8c//t5CpjzxUMhcg387iYCBb5qUe9go2SP3VpIVNeqahxgMYjlcNgSAenaUx62XsvZbAj5p2YL6bhwF3F1rEgVOPAaD1ABG3/+lxgPA1hDgw3a0vl0sQABXRBLcMnAe0JZAIpLcfkX9YY6g75Aw94IQAuhqtwgSAxauIBKy15Mo8cCzWiMu46naI168xcmEo1kQA5/5NsaNomEkDxOIwTKYBzrFSSQUsUUAshGGe5+PN+/VrltEQGvIYJ6wOGqbKACqhkFCASyjlCS9lWwawCe084e2MXSg0QOBXGg3g+KVKAyr8WicBgnhYSEBLPG0U4PG66q0ATT7v/mGfKQfKB4zyEad4yCof8zakwX551P3CsF087pcvHKsPpStP+dJVvvaVL55fWH2DyzdkLd956/8vx6XV0bOYnOQAAAAASUVORK5CYII=" alt="Wavve 페이스북">
+                        </a>
+                    </div>
+                    <div class="naver-link">
+                        <a href="http://m.post.naver.com/my.nhn?memberNo=12375258" target="_blank" rel="noopener noreferrer">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABOUExURUdwTCYmJicnJyUlJSYmJicnJyYmJiUlJS0tLSYmJiYmJigoKCUlJSUlJf7+/iUlJbm5ufHx8VtbW3h4eOTk5DIyMikpKZ+fn0VFRczMzO6Le3EAAAAOdFJOUwCON9T5YcjsFHvfU6WxjM/C1AAAAa5JREFUWMOtl+uSgyAMhRGRi1qj2Gp9/xdd7bqtFxJw0/OjM52RzyQcJBECka1crUujlCl17SorLklmORyUZzJ1tXWn1SvD2aTlBlCZOKIglr8QBf16DVFpIghpIEEGrWahIEkKSSODZGWh9Te4oBvr/cEYCrioQx2kugpQu72wBi7LbP1w8k8T0MlRVAFSAJ8yBBJIAryTcPA/ADi8gmmANYRAACug67r1JwxYQ8gxQAvwuDc9QIsB8peHgAAMngSAxA7BHwBgJAEZksEGMHgKMOdggQL4YfmHA8CKigT0YwRQBTdxA2g8DXCijgDuDxJQC40D4kZajmRJAGJWnlUKwwMYoXgAxQewUyiBpVJoHkAjRmrPGbSIkcJWnj8kBy2ODFo5fJjAHwEekMNkkeTG/foRecwiH5RZ03b9NCCNG3GvP7sN4Enc8pKzixL7rCcqRy+WfR2xCq4XC94cTHQF37crGsKvnRALfS5XIoRlJ7pnvEfBOyyPWnDfZ+FHsu+Jg5jUZA1DNIFvtHn8RpPf6vKbbX67zx84+CMPf+jij31fGDz5o+8Xhu9r4/8P6gi556iJuXoAAAAASUVORK5CYII=" alt="Wavve 네이버 포스트">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-info">
+                    <span>콘텐츠웨이브 주식회사</span> | <span>대표이사 이태현</span> | <span>고객센터 1599-3709 (평일 09:00~18:00 / 점심시간 12:00~13:00 / 주말 및 공휴일 휴무)</span><br/>
+                    <span>사업자등록번호 220-88-38020</span> | <span>호스팅서비스제공자 : 마이크로소프트 유한회사, 구글클라우드코리아 유한회사, 아마존웹서비시즈코리아 유한회사</span><br/>
+                    <span>통신판매업 신고번호 : 제 2021-서울영등포-0585호</span> | <span>통신판매업 정보 공개 : http://www.ftc.go.kr/bizCommPop.do?wrkr_no=220-88-38020</span><br/>
+                    <address>서울특별시 영등포구 여의나루로 60 포스트타워 19층</address> | <span>전자우편주소 : helpdesk@wavve.com</span><br/>
+                    <span>Copyright&copy; 콘텐츠웨이브(주) All rights reserved.</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- 브라우저에 보여질 부분 ↑ -->
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="../assets/js/header.js"></script>
+    <script src="../assets/js/footer.js"></script>
+    <script>
+        $(function(){
+            // 스위퍼 버튼 생성
+            $('.content-swiper').hover(
+                function() {
+                    $(this).find('.swiper-button-prev').stop(true, true).animate({ left: '0px' }, 300);
+                    $(this).find('.swiper-button-next').stop(true, true).animate({ right: '0px' }, 300);
+                },
+                function() {
+                    $(this).find('.swiper-button-prev').stop(true, true).animate({ left: '-40px' }, 300);
+                    $(this).find('.swiper-button-next').stop(true, true).animate({ right: '-40px' }, 300);
+                }
+            );
+        });
+    </script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            loop: true, // 무한 루프
+            centeredSlides: true, // 가운데 정렬
+            slidesPerView: 'auto', // 한 번에 보이는 슬라이드 개수
+            spaceBetween: 20, // 슬라이드 간 간격
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            speed: 1000,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'fraction', // 숫자 형식 (1/5)
+                formatFractionCurrent: function (number) {
+                    // return ('0' + number).slice(-2); // 01, 02, 03 형식으로 만들기
+                    return number;
+                },
+                formatFractionTotal: function (number) {
+                    // return ('0' + number).slice(-2); // 01, 02, 03 형식
+                    return number;
+                },
+            }
+        });
+
+        var content_swiper = new Swiper('.content-swiper', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                1300: { // 1300px 이상일 때
+                    slidesPerView: 5
+                },
+                0: { // 479px 이하일 때 (모바일)
+                    slidesPerView: 2
+                }
+            }
+        });
+
+        var announcement_swiper = new Swiper('.announcement-swiper .swiper', {
+            loop: true,
+            slidesPerView: 1,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            direction: 'vertical', // 상하(세로) 방향 슬라이드 설정
+            navigation: {
+                nextEl: '.next-button-area',
+                prevEl: '.prev-button-area',
+            },
+        });
+
+    </script>
+</body>
+
+</html>

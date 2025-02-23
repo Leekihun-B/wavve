@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="description" content="Wavve 사이트 clone 작업물">
+    <meta name="keywords" content="Wavve, clone작업물">
+    <meta name="author" content="Lee gi hun">
+    <title>My Web Page</title>
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./css/user_info.css" />
+
+    <style>
+        .hidden {
+            visibility: hidden;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1 style="display: block; position: absolute; left: -200000px;">wavve clone 작업물</h1>
+    <div class="warp">
+        <header>
+            <div class="title">
+                <div class="logo">
+                    <a href="../index.html"><img src="https://www.wavve.com/img/ci-wavve.5b304973.svg" alt="Wavve" /></a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="main">
+                <div class="user-info-area">
+                    <table class="user-info">
+                        <tbody>
+                            <tr>
+                                <th rowspan="2">이메일(아이디)</th>
+                                <td>test@naver.com</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="javascript:void(0);" class="link-area-a">이메일(아이디) 변경하기</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>비밀번호</th>
+                                <td>
+                                    <a href="javascript:void(0);" class="link-area-b">비밀번호 변경하기</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>이름</th>
+                                <td>아무개</td>
+                            </tr>
+                            <tr>
+                                <th>성별</th>
+                                <td>남</td>
+                            </tr>
+                            <tr>
+                                <th>생년월일</th>
+                                <td>20000101</td>
+                            </tr>
+                            <tr>
+                                <th>휴대폰번호</th>
+                                <td><input type="text" class="phone_number" id="phone_number" value="" placeholder="휴대폰 번호를 입력해주세요.(선택)" /></td>
+                            </tr>
+                            <tr>
+                                <th>이메일 주소</th>
+                                <td>test@naver.com</td>
+                            </tr>
+                            <tr>
+                                <th>SKT 혜택 인증</th>
+                                <td>
+                                    <a href="javascript:void(0);" class="link-area-c">SKT 부가서비스 혜택 인증하기</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>빠른결제 카드관리</th>
+                                <td>
+                                    <a href="javascript:void(0);" class="link-area-d">빠른결제 카드관리</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>SNS 연결관리</th>
+                                <td>
+                                    <a href="javascript:void(0);" class="link-area-e">SNS 연결관리</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="checkbox_area">
+                        <ul>
+                            <li>
+                                <div>
+                                    <input type="checkbox" class="check-a" id="check-a" value="" /><label for="check-a">마케팅 및 이벤트 개인정보 수집·이용 동의 (선택)</label>
+                                    <a href="javascript:void(0);" class="more-img"><span class="hidden">더보기 약</span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <input type="checkbox" class="check-b" id="check-b" value="" /><label for="check-b">광고성 정보 수신 동의 (선택)</label>
+                                    <a href="javascript:void(0);" class="more-img"><span class="hidden">더보기 약</span></a>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="check-b-a" id="check-b-a" value="" /><label for="check-b-a">이메일 수신동의 (선택)</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="check-b-b" id="check-b-b" value="" /><label for="check-b-b">SMS 수신동의 (선택)</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="explanation">
+                        * 이벤트 푸시의 경우 APP > 설정 > 푸시설정에서 변경할 수 있습니다.
+                    </div>
+                    <div class="button-area">
+                        <ul>
+                            <li>
+                                <button class="cancell">
+                                    취소
+                                </button>
+                            </li>
+                            <li>
+                                <button class="modify">
+                                    수정
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="user-drop-out">
+                    <div class="drop-out-button-area">
+                        <a href="javascript:void(0);" class="drop-out-button">회원탈퇴</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div class="email-area">
+        <div class="email-change-popup">
+            <div class="email-title">
+                <span>이메일(아이디) 변경</span>
+                <span>변경할 이메일 (아이디)를 입력해 주세요.</span>
+            </div>
+            <div class="email-input">
+                <input type="text" class="email" id="email" value="" placeholder="wavve@example.com" autocomplete="off"/>
+                <button class="code-button">인증코드 전송</button>
+            </div>
+            <div class="explanation">
+                ○ 로그인, 비밀번호 찾기, 알림에 사용되니 정확한 이메일을 입력해 주세요.
+            </div>
+            <div class="code-input">
+                <input type="text" class="code" id="code" value="" placeholder="이메일로 전송된 인증코드를 입력해주세요." autocomplete="off"/>
+            </div>
+            <button class="email-check">확인</button>
+            <div class="email-close">
+                <img src="https://member.wavve.com/images/common/btn-popup-close.png" alt="btn-close">
+                <span class="hidden">닫기</span>
+            </div>
+        </div>
+    </div>
+    <div class="password-area">
+        <div class="password-change-popup">
+            <div class="password-title">
+                <span>비밀번호 변경</span>
+                <span>변경할 비밀번호를 입력해 주세요.</span>
+            </div>
+            <div class="password-id-area"> 
+                <span>아이디 wavve@example.com</span>
+            </div>
+            <div class="password-id-check-input1"> 
+                <input type="password" class="password1" id="password1" value="" placeholder="새 비밀번호를 입력해주세요." autocomplete="off"/>
+            </div>
+            <div class="password-id-check-input2"> 
+                <input type="password" class="password2" id="password2" value="" placeholder="새 비밀번호를 한 번 더 입력해주세요." autocomplete="off"/>
+            </div>
+            <div class="explanation">
+                * 8-20자, 영문 대소문자, 숫ㅈ자, 특수문자 중 3가지 이상 혼용하여 입력해 주세요.
+            </div>
+            <button class="password-check">확인</button>
+            <div class="password-close">
+                <img src="https://member.wavve.com/images/common/btn-popup-close.png" alt="btn-close">
+                <span class="hidden">닫기</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function(){
+            /** checkbox 선택 이벤트 */
+            $('.check-a').on('click', function () {
+                if (!$('.check-a').is(':checked')) {
+                    $('.check-b').prop('checked', false);
+                    $('.check-b-a').prop('checked', false);
+                    $('.check-b-b').prop('checked', false);
+                }else if ($('.check-a').is(':checked')){
+                    $('.check-b').prop('checked', true);
+                    $('.check-b-a').prop('checked', true);
+                    $('.check-b-b').prop('checked', true);
+                }
+            });
+            $('.check-b').on('click', function () {
+                if (!$('.check-b').is(':checked')) {
+                    $('.check-b-a').prop('checked', false);
+                    $('.check-b-b').prop('checked', false);
+                }else if ($('.check-b').is(':checked')){
+                    $('.check-a').prop('checked', true);
+                    $('.check-b-a').prop('checked', true);
+                    $('.check-b-b').prop('checked', true);
+                }
+            });
+            $('.check-b-a').on('click', function () {
+                if (!$('.check-b-a').is(':checked')) {
+                    $('.check-b').prop('checked', false);
+                }else if ($('.check-b-a').is(':checked')){
+                    $('.check-a').prop('checked', true);
+                    $('.check-b').prop('checked', true);
+                }
+            });
+            $('.check-b-a').on('click', function () {
+                if (!$('.check-b-a').is(':checked')) {
+                    $('.check-b').prop('checked', false);
+                }else if ($('.check-b-a').is(':checked')){
+                    $('.check-a').prop('checked', true);
+                    $('.check-b').prop('checked', true);
+                }
+            });
+            $('.check-b-b').on('click', function () {
+                if (!$('.check-b-b').is(':checked')) {
+                    $('.check-b').prop('checked', false);
+                }else if ($('.check-b-b').is(':checked')){
+                    $('.check-a').prop('checked', true);
+                    $('.check-b').prop('checked', true);
+                }
+            });
+        });
+
+        
+        $('.link-area-a').on('click', function () {
+            $('.email-area').css('display', 'block');
+        });
+        $('.email-close').on('click', function () {
+            $('.email-area').css('display', 'none');
+        });
+        $('.link-area-b').on('click', function () {
+            $('.password-area').css('display', 'block');
+        });
+        $('.password-close').on('click', function () {
+            $('.password-area').css('display', 'none');
+        });
+        
+    </script>
+
+</body>
+
+</html>

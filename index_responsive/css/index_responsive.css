@@ -1,0 +1,1434 @@
+/** 메인S */
+/* 모바일 */
+@media (max-width: 919px) {
+    /** 헤더S */
+    header {
+        width: 100%;
+        min-width: 480px;
+        height: 70px;
+        position: fixed;
+        z-index: 1000;
+        background-color: rgb(30, 30, 30);
+    }
+    header > .header {
+        width: 1270px;
+        height: 70px;
+        margin: auto;
+        display: flex;
+        background-color: rgb(30, 30, 30);
+    }
+    header > .header > .logo{
+        width: 200px;
+        height: 47px;
+        padding-top: 23px;
+        margin-left: 20px;
+        /* background-color: rgb(90, 209, 79); */
+    }
+    header > .header > .logo > .logo-box{
+        width: 110px;
+        height: 30px;
+        /* background-color: rgb(128, 190, 123); */
+    }
+    header > .header > .navigator{
+        width: 990px;
+        height: 70px;
+        display: none;
+        /* background-color: rgb(0, 255, 242); */
+    }
+    header > .header > .navigator > ul > li > a{
+        display: block;
+        width: auto;
+        height: 70px;
+        float: left;
+        line-height: 70px;
+        padding-right: 40px;
+        font-size: 18px;
+        font-weight: 400;
+        color: rgb(179, 179, 179);
+        cursor: pointer;
+        /* background-color: rgb(0, 255, 149); */
+    }
+    header > .header > .navigator > ul > li > a:hover{
+        color: rgb(255, 255, 255);
+        /* background-color: rgb(0, 255, 149); */
+    }
+    header > .header > .info{
+        width: 80px;
+        height: 70px;
+        position: absolute;
+        right: 10px;
+        /* background-color: rgb(204, 0, 255); */
+    }
+    header > .header > .info > nav{
+        width: 40px;
+        height: 48px;
+        float: left;
+        user-select: none;
+        padding-top: 22px;
+        /* background-color: rgb(214, 82, 247); */
+    }
+
+    /* 검색 */
+    header > .header > .info > .search{
+        position: relative;
+    }
+    header > .header > .info > .search > .search-button{
+        cursor: pointer;
+    }
+
+    header > .header > .info > .search  .search-area{
+        width: 310px;
+        height: 42px;
+
+        position: absolute;
+        top: -50px;
+        right: 15px;
+        display: flex;
+        background-color: rgba(0, 0, 0, 0);
+
+        overflow: hidden;
+    }
+    header > .header > .info > .search  .search-box{
+        width: 300px;
+        height: 40px;
+        
+        display: flex;
+        border: 1px solid rgb(107, 107, 107);
+        background-color: rgb(0, 0, 0);
+    }
+    header > .header > .info > .search  .search-t{
+        width: 80px;
+        height: 40px;
+
+        background: linear-gradient(90deg, rgba(27, 27, 27, 0), #1b1b1b);
+    }
+
+    header > .header > .info > .search  .search-box  svg{
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 5px;
+    }
+    header > .header > .info > .search  .search-box  input{
+        width: 220px;
+        height: 25px;
+        display: block;
+        border: none;
+        outline: none; /* 포커스 시 테두리도 제거 */
+        color: white;
+        margin-top: 7px;
+        
+        background-color: rgb(0, 0, 0);
+    }
+
+    /* 내정보 */
+    .my-info-box {
+        width: 200px;
+        height: 165px;
+        display: none;
+        position: absolute;
+        top: 45px;
+        right: 10px;
+        z-index: 100;
+        background-color: rgb(30, 30, 30);
+    }
+    .my-info-box .my-info-box-area {
+        width: 180px;
+        height: 130px;
+        margin: auto;
+        margin-top: 35px;
+
+        /* background-color: rgb(116, 77, 77); */
+    }
+    .my-info-box .my-info-box-area div {
+        width: 200px;
+        height: 40px;
+        text-align: left;
+        text-indent: 10px;
+        font-weight: 350;
+        font-size: 15px;
+        line-height: 40px;
+        color: rgb(179, 179, 179);
+
+        /* background-color: rgb(116, 77, 77); */
+    }
+    .my-info-box .my-info-box-area div:hover {
+        cursor: pointer;
+        color: rgb(255, 255, 255);
+    }
+
+    /** 헤더E */
+
+
+    .warp {
+        background-color: rgb(30, 30, 30);
+    }
+    
+    main {
+        width: 100%;
+        min-height: 1300px;
+        padding-top: 70px;
+        background-color: rgb(30, 30, 30);
+    }
+    main > .main{
+        width: 100%;
+        min-height: 800px;
+        /* background-color: rgb(0, 255, 149); */
+    }
+    
+    /* swiper */
+    .swiper-container {
+        position: relative;
+        width: 100%;
+        max-width: 470px;
+        height: 300px;
+        margin: auto;
+        margin-bottom: 100px;
+    }
+    .swiper-container > .swiper-wrapper > .swiper-slide {
+        width: 470px !important;
+        height: 300px !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .swiper-container > .swiper-wrapper > .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        border-radius: 10px;
+    }
+    /* 가운데 슬라이드 확대 효과 */
+    .swiper-slide-active img {
+        /* transform: scale(1.1); */
+        /* box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5); */
+    }
+    .swiper-pagination {
+        width: 30px;
+        font-size: 12px;
+        font-weight: bold;
+        color: white;
+        position: absolute;
+        bottom: 10px;
+        left: 1170px;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
+    /* 현재 페이지 색상 */
+    .swiper-pagination-current {
+        color: #ffffff;  /* 현재 페이지 텍스트 색상 */
+    }
+    /* 전체 페이지 색상 */
+    .swiper-pagination-total {
+        color: #a5a5a5;  /* 전체 페이지 텍스트 색상 */
+    }
+    .content {
+        width: 100%;
+        height: 460px;
+        /* background-color: red; */
+    }
+    .content > .content-area {
+        width: 450px;
+        margin: auto;
+        /* background-color: rgb(206, 107, 107); */
+    }
+    .content > .content-area > .head-box {
+        width: 100%;
+        height: 50px;
+        position: relative;
+        /* background-color: rgb(255, 0, 0); */
+    }
+    .content > .content-area > .head-box > .head-box-title {
+        width: 1240px;
+        height: 50px;
+        color: white;
+        font-size: 13px;
+        /* background-color: rgb(85, 85, 85); */
+    }
+    .content > .content-area > .head-box > .head-box-more-button {
+        width: 70px;
+        height: 37px;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        user-select: none;
+        padding-top: 13px;
+        /* background-color: rgb(119, 119, 119); */
+    }
+    .content > .content-area > .head-box > .head-box-more-button > .more-button {
+        display: block;
+        width: 65px;
+        height: 24px;
+        background-color: red;
+        color: rgb(179, 179, 179);
+        background: url(https://www.wavve.com/img/icon-arrow-see-all-default.01e1b585.svg) no-repeat 100%;
+    }
+    .content > .content-area > .content-list {
+        overflow: hidden;
+        /* background-color: rgb(202, 202, 202); */
+    }
+    .swiper-wrapper {
+        user-select: none;
+    }
+    .content-swiper {
+        position: relative;
+    }
+    .content-swiper .swiper-button-next{
+        width: 35px;
+        height: 50px;
+        background-color: rgba(65, 65, 65, 0.568);
+        top: 160px;
+        right: -40px;
+    }
+    .content-swiper .swiper-button-prev{
+        width: 35px;
+        height: 50px;
+        background-color: rgba(65, 65, 65, 0.568);
+        top: 160px;
+        left: -40px;
+    }
+    .content-swiper .swiper-slide {
+        /* width: 220px !important;
+        height: 320px !important;
+        margin-right: 10px; */
+        width: 220px !important;
+        height: 320px !important;
+        text-align: center;
+        border-radius: 10px 10px 10px 10px;
+        font-size: 18px;
+        /* background: #fff; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    .content-swiper .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px 10px 10px 10px;
+        object-fit: cover;
+        transition: transform 0.2s ease-in-out;
+    }
+    .content-swiper .swiper-slide img:hover {
+        transform: scale(1.05);
+    }
+
+        /** 공지사항S */
+
+    .announcement {
+        width: 100%;
+        min-width: 480px;
+        height: 50px;
+        border-top: 1px solid rgb(56, 56, 56);
+        border-bottom: 1px solid rgb(56, 56, 56);
+        color: rgb(133, 133, 133);
+
+        background-color: rgb(30, 30, 30);
+    }
+    .announcement > div{
+        position: relative;
+        min-width: 480px;
+        height: 100%;
+        margin: auto;
+        display: flex;
+        margin-left: 20px;
+
+        /* background-color: red; */
+    }
+    .announcement > div > .title{
+        display: none;
+        width: 120px;
+        height: 100%;
+        line-height: 50px;
+
+        /* background-color: red; */
+    }
+    .announcement > div > .announcement-swiper{
+        width: 1040px;
+        min-width: 300px;
+        height: 100%;
+        line-height: 50px;
+
+        /* background-color: red; */
+    }
+    .announcement > div > .announcement-swiper > .swiper{
+        width: 700px;
+        height: 50px;
+        line-height: 50px;
+        margin-left: 0px;
+
+        /* background-color: rgb(141, 60, 60); */
+    }
+    .announcement-swiper > .swiper .swiper-slide {
+        text-align: left;
+        text-indent: 5px;
+        font-size: 15px;
+        /* background: #fff; */
+    }
+    .announcement > div > .prev-button-area {
+        position: absolute;
+        right: 90px;
+        z-index: 200;
+        width: 50px;
+        height: 100%;
+        border-left: 1px solid rgb(56, 56, 56);
+        border-right: 1px solid rgb(56, 56, 56);
+        cursor: pointer;
+    }
+    .announcement > div > .next-button-area {
+        position: absolute;
+        right: 40px;
+        z-index: 200;
+        width: 50px;
+        height: 100%;
+        border-right: 1px solid rgb(56, 56, 56);
+        cursor: pointer;
+    }
+
+    /** 공지사항E */
+
+    /** 풋터S */
+
+    footer {
+        width: 100%;
+        min-height: 200px;
+        color: rgb(112, 112, 112);
+        /* background-color: red; */
+    }
+    footer .footer-area {
+        min-width: 450px;
+        height: 100%;
+        margin: auto;
+        padding-left: 20px;
+        padding-right: 30px;
+        /* background-color: rgb(206, 107, 107); */
+    }
+    footer .footer-area .footer-link {
+        width: 100%;
+        height: 60px;
+        display: none;
+        /* background-color: rgb(194, 194, 194); */
+    }
+    footer .footer-area .footer-link ul{
+        display: flex;
+        margin-right: 290px;
+        /* background-color: rgb(153, 153, 153); */
+    }
+    footer .footer-area .footer-link ul li {
+        height: 60px;
+        line-height: 60px;
+        cursor: pointer;
+        margin-right: 25px;
+        font-size: 14px;
+        display: block;
+        /* background-color: rgb(153, 153, 153); */
+    }
+    footer .footer-area .footer-link ul li:hover {
+        color: rgb(255, 255, 255);
+    }
+    footer .footer-area .footer-link .footer-link-select-logo {
+        width: 100px;
+        height: 60px;
+        display: flex;
+        /* background-color: rgb(194, 194, 194); */
+    }
+    footer .footer-area .footer-link .footer-link-select-logo label {
+        width: 100px;
+        height: 40px;
+        margin-top: 10px;
+        /* background-color: rgb(194, 194, 194); */
+    }
+    footer .footer-area .footer-link .footer-link-select {
+        width: 230px;
+        height: 30px;
+        margin-top: 15px;
+        /* background-color: rgb(194, 194, 194); */
+    }
+    footer .footer-area .footer-link .facebook-link {
+        width: 35px;
+        height: 35px;
+        margin-top: 13px;
+        margin-left: 10px;
+        /* background-color: rgb(194, 194, 194); */
+    }
+    footer .footer-area .footer-link .facebook-link img {
+        max-width: 100%;
+    }
+    footer .footer-area .footer-link .naver-link {
+        width: 35px;
+        height: 35px;
+        margin-top: 13px;
+        margin-left: 10px;
+        /* background-color: rgb(194, 194, 194); */
+    }
+    footer .footer-area .footer-link .naver-link img {
+        max-width: 100%;
+    }
+
+    footer .footer-area .footer-info {
+        width: 100%;
+        height: 200px;
+        margin-top: 20px;
+        font-family: Arial, sans-serif;
+        font-size: 11px;
+    }
+
+    footer .footer-area .footer-info address{
+        display: inline-block;
+    }
+
+    /** 풋터E */
+}
+
+/* 태블릿 */
+@media (min-width: 920px) and (max-width: 1299px) {
+    /** 헤더S */
+    header {
+        width: 100%;
+        min-width: 480px;
+        height: 70px;
+        position: fixed;
+        z-index: 1000;
+        background-color: rgb(30, 30, 30);
+    }
+    header > .header {
+        width: 1270px;
+        height: 70px;
+        margin: auto;
+        display: flex;
+        background-color: rgb(30, 30, 30);
+    }
+    header > .header > .logo{
+        width: 200px;
+        height: 47px;
+        padding-top: 23px;
+        margin-left: 20px;
+        /* background-color: rgb(90, 209, 79); */
+    }
+    header > .header > .logo > .logo-box{
+        width: 110px;
+        height: 30px;
+        /* background-color: rgb(128, 190, 123); */
+    }
+    header > .header > .navigator{
+        width: 990px;
+        height: 70px;
+        display: none;
+        /* background-color: rgb(0, 255, 242); */
+    }
+    header > .header > .navigator > ul > li > a{
+        display: block;
+        width: auto;
+        height: 70px;
+        float: left;
+        line-height: 70px;
+        padding-right: 40px;
+        font-size: 18px;
+        font-weight: 400;
+        color: rgb(179, 179, 179);
+        cursor: pointer;
+        /* background-color: rgb(0, 255, 149); */
+    }
+    header > .header > .navigator > ul > li > a:hover{
+        color: rgb(255, 255, 255);
+        /* background-color: rgb(0, 255, 149); */
+    }
+    header > .header > .info{
+        width: 80px;
+        height: 70px;
+        position: absolute;
+        right: 10px;
+        /* background-color: rgb(204, 0, 255); */
+    }
+    header > .header > .info > nav{
+        width: 40px;
+        height: 48px;
+        float: left;
+        user-select: none;
+        padding-top: 22px;
+        /* background-color: rgb(214, 82, 247); */
+    }
+
+    /* 검색 */
+    header > .header > .info > .search{
+        position: relative;
+    }
+    header > .header > .info > .search > .search-button{
+        cursor: pointer;
+    }
+
+    header > .header > .info > .search  .search-area{
+        width: 310px;
+        height: 42px;
+
+        position: absolute;
+        top: -50px;
+        right: 15px;
+        display: flex;
+        background-color: rgba(0, 0, 0, 0);
+
+        overflow: hidden;
+    }
+    header > .header > .info > .search  .search-box{
+        width: 300px;
+        height: 40px;
+        
+        display: flex;
+        border: 1px solid rgb(107, 107, 107);
+        background-color: rgb(0, 0, 0);
+    }
+    header > .header > .info > .search  .search-t{
+        width: 80px;
+        height: 40px;
+
+        background: linear-gradient(90deg, rgba(27, 27, 27, 0), #1b1b1b);
+    }
+
+    header > .header > .info > .search  .search-box  svg{
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 5px;
+    }
+    header > .header > .info > .search  .search-box  input{
+        width: 220px;
+        height: 25px;
+        display: block;
+        border: none;
+        outline: none; /* 포커스 시 테두리도 제거 */
+        color: white;
+        margin-top: 7px;
+        
+        background-color: rgb(0, 0, 0);
+    }
+
+    /* 내정보 */
+    .my-info-box {
+        width: 200px;
+        height: 165px;
+        display: none;
+        position: absolute;
+        top: 45px;
+        right: 10px;
+        z-index: 100;
+        background-color: rgb(30, 30, 30);
+    }
+    .my-info-box .my-info-box-area {
+        width: 180px;
+        height: 130px;
+        margin: auto;
+        margin-top: 35px;
+
+        /* background-color: rgb(116, 77, 77); */
+    }
+    .my-info-box .my-info-box-area div {
+        width: 200px;
+        height: 40px;
+        text-align: left;
+        text-indent: 10px;
+        font-weight: 350;
+        font-size: 15px;
+        line-height: 40px;
+        color: rgb(179, 179, 179);
+
+        /* background-color: rgb(116, 77, 77); */
+    }
+    .my-info-box .my-info-box-area div:hover {
+        cursor: pointer;
+        color: rgb(255, 255, 255);
+    }
+
+    /** 헤더E */
+
+
+    .warp {
+        background-color: rgb(30, 30, 30);
+    }
+    
+    main {
+        width: 100%;
+        min-height: 1300px;
+        padding-top: 70px;
+        background-color: rgb(30, 30, 30);
+    }
+    main > .main{
+        width: 100%;
+        min-height: 800px;
+        /* background-color: rgb(0, 255, 149); */
+    }
+    
+    /* swiper */
+    .swiper-container {
+        position: relative;
+        width: 100%;
+        max-width: 700px;
+        height: 300px;
+        margin: auto; /* 가운데 정렬 */
+        margin-bottom: 100px;
+    }
+    .swiper-container > .swiper-wrapper > .swiper-slide {
+        width: 700px !important;
+        height: 300px !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .swiper-container > .swiper-wrapper > .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        border-radius: 10px;
+    }
+    /* 가운데 슬라이드 확대 효과 */
+    .swiper-slide-active img {
+        /* transform: scale(1.1); */
+        /* box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5); */
+    }
+    .swiper-pagination {
+        width: 30px;
+        font-size: 12px;
+        font-weight: bold;
+        color: white;
+        position: absolute;
+        bottom: 10px;
+        left: 1170px;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
+    /* 현재 페이지 색상 */
+    .swiper-pagination-current {
+        color: #ffffff;  /* 현재 페이지 텍스트 색상 */
+    }
+    /* 전체 페이지 색상 */
+    .swiper-pagination-total {
+        color: #a5a5a5;  /* 전체 페이지 텍스트 색상 */
+    }
+    .content {
+        width: 100%;
+        height: 460px;
+        /* background-color: red; */
+    }
+    .content > .content-area {
+        width: 680px;
+        margin: auto;
+        /* background-color: rgb(206, 107, 107); */
+    }
+    .content > .content-area > .head-box {
+        width: 100%;
+        height: 50px;
+        position: relative;
+        /* background-color: rgb(255, 0, 0); */
+    }
+    .content > .content-area > .head-box > .head-box-title {
+        width: 1240px;
+        height: 50px;
+        color: white;
+        font-size: 13px;
+        /* background-color: rgb(85, 85, 85); */
+    }
+    .content > .content-area > .head-box > .head-box-more-button {
+        width: 70px;
+        height: 37px;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        user-select: none;
+        padding-top: 13px;
+        /* background-color: rgb(119, 119, 119); */
+    }
+    .content > .content-area > .head-box > .head-box-more-button > .more-button {
+        display: block;
+        width: 65px;
+        height: 24px;
+        background-color: red;
+        color: rgb(179, 179, 179);
+        background: url(https://www.wavve.com/img/icon-arrow-see-all-default.01e1b585.svg) no-repeat 100%;
+    }
+    .content > .content-area > .content-list {
+        overflow: hidden;
+        /* background-color: rgb(202, 202, 202); */
+    }
+    .swiper-wrapper {
+        user-select: none;
+    }
+    .content-swiper {
+        position: relative;
+    }
+    .content-swiper .swiper-button-next{
+        width: 35px;
+        height: 50px;
+        background-color: rgba(65, 65, 65, 0.568);
+        top: 160px;
+        right: -40px;
+    }
+    .content-swiper .swiper-button-prev{
+        width: 35px;
+        height: 50px;
+        background-color: rgba(65, 65, 65, 0.568);
+        top: 160px;
+        left: -40px;
+    }
+    .content-swiper .swiper-slide {
+        width: 220px !important;
+        height: 320px !important;
+        text-align: center;
+        border-radius: 10px 10px 10px 10px;
+        font-size: 18px;
+        /* background: #fff; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    .content-swiper .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px 10px 10px 10px;
+        object-fit: cover;
+        transition: transform 0.2s ease-in-out;
+    }
+    .content-swiper .swiper-slide img:hover {
+        transform: scale(1.05);
+    }
+
+        /** 공지사항S */
+
+    .announcement {
+        width: 100%;
+        min-width: 480px;
+        height: 50px;
+        border-top: 1px solid rgb(56, 56, 56);
+        border-bottom: 1px solid rgb(56, 56, 56);
+        color: rgb(133, 133, 133);
+
+        background-color: rgb(30, 30, 30);
+    }
+    .announcement > div{
+        position: relative;
+        min-width: 480px;
+        height: 100%;
+        margin: auto;
+        display: flex;
+        margin-left: 20px;
+
+        /* background-color: red; */
+    }
+    .announcement > div > .title{
+        display: none;
+        width: 120px;
+        height: 100%;
+        line-height: 50px;
+
+        /* background-color: red; */
+    }
+    .announcement > div > .announcement-swiper{
+        width: 1040px;
+        min-width: 300px;
+        height: 100%;
+        line-height: 50px;
+
+        /* background-color: red; */
+    }
+    .announcement > div > .announcement-swiper > .swiper{
+        width: 700px;
+        height: 50px;
+        line-height: 50px;
+        margin-left: 0px;
+
+        /* background-color: rgb(141, 60, 60); */
+    }
+    .announcement-swiper > .swiper .swiper-slide {
+        text-align: left;
+        text-indent: 5px;
+        font-size: 15px;
+        /* background: #fff; */
+    }
+    .announcement > div > .prev-button-area {
+        position: absolute;
+        right: 90px;
+        z-index: 200;
+        width: 50px;
+        height: 100%;
+        border-left: 1px solid rgb(56, 56, 56);
+        border-right: 1px solid rgb(56, 56, 56);
+        cursor: pointer;
+    }
+    .announcement > div > .next-button-area {
+        position: absolute;
+        right: 40px;
+        z-index: 200;
+        width: 50px;
+        height: 100%;
+        border-right: 1px solid rgb(56, 56, 56);
+        cursor: pointer;
+    }
+
+    /** 공지사항E */
+
+    /** 풋터S */
+
+    footer {
+        width: 100%;
+        min-height: 200px;
+        color: rgb(112, 112, 112);
+        /* background-color: red; */
+    }
+    footer .footer-area {
+        min-width: 450px;
+        height: 100%;
+        margin: auto;
+        padding-left: 20px;
+        padding-right: 30px;
+        /* background-color: rgb(206, 107, 107); */
+    }
+    footer .footer-area .footer-link {
+        width: 100%;
+        height: 60px;
+        display: none;
+        /* background-color: rgb(194, 194, 194); */
+    }
+    footer .footer-area .footer-link ul{
+        display: flex;
+        margin-right: 290px;
+        /* background-color: rgb(153, 153, 153); */
+    }
+    footer .footer-area .footer-link ul li {
+        height: 60px;
+        line-height: 60px;
+        cursor: pointer;
+        margin-right: 25px;
+        font-size: 14px;
+        display: block;
+        /* background-color: rgb(153, 153, 153); */
+    }
+    footer .footer-area .footer-link ul li:hover {
+        color: rgb(255, 255, 255);
+    }
+    footer .footer-area .footer-link .footer-link-select-logo {
+        width: 100px;
+        height: 60px;
+        display: flex;
+        /* background-color: rgb(194, 194, 194); */
+    }
+    footer .footer-area .footer-link .footer-link-select-logo label {
+        width: 100px;
+        height: 40px;
+        margin-top: 10px;
+        /* background-color: rgb(194, 194, 194); */
+    }
+    footer .footer-area .footer-link .footer-link-select {
+        width: 230px;
+        height: 30px;
+        margin-top: 15px;
+        /* background-color: rgb(194, 194, 194); */
+    }
+    footer .footer-area .footer-link .facebook-link {
+        width: 35px;
+        height: 35px;
+        margin-top: 13px;
+        margin-left: 10px;
+        /* background-color: rgb(194, 194, 194); */
+    }
+    footer .footer-area .footer-link .facebook-link img {
+        max-width: 100%;
+    }
+    footer .footer-area .footer-link .naver-link {
+        width: 35px;
+        height: 35px;
+        margin-top: 13px;
+        margin-left: 10px;
+        /* background-color: rgb(194, 194, 194); */
+    }
+    footer .footer-area .footer-link .naver-link img {
+        max-width: 100%;
+    }
+
+    footer .footer-area .footer-info {
+        width: 100%;
+        height: 200px;
+        margin-top: 20px;
+        font-family: Arial, sans-serif;
+        font-size: 11px;
+    }
+
+    footer .footer-area .footer-info address{
+        display: inline-block;
+    }
+
+    /** 풋터E */
+}
+
+/* 데스크탑 */
+@media (min-width: 1300px) {
+    /** 헤더S */
+    header {
+        width: 100%;
+        height: 70px;
+        position: fixed;
+        z-index: 1000;
+        background-color: rgb(30, 30, 30);
+    }
+    header > .header {
+        width: 1270px;
+        height: 70px;
+        margin: auto;
+        display: flex;
+        background-color: rgb(30, 30, 30);
+    }
+    header > .header > .logo{
+        width: 200px;
+        height: 47px;
+        padding-top: 23px;
+        /* background-color: rgb(90, 209, 79); */
+    }
+    header > .header > .logo > .logo-box{
+        width: 110px;
+        height: 30px;
+        /* background-color: rgb(128, 190, 123); */
+    }
+    header > .header > .navigator{
+        width: 990px;
+        height: 70px;
+        /* background-color: rgb(0, 255, 242); */
+    }
+    header > .header > .navigator > ul > li > a{
+        display: block;
+        width: auto;
+        height: 70px;
+        float: left;
+        line-height: 70px;
+        padding-right: 40px;
+        font-size: 18px;
+        font-weight: 400;
+        color: rgb(179, 179, 179);
+        cursor: pointer;
+        /* background-color: rgb(0, 255, 149); */
+    }
+    header > .header > .navigator > ul > li > a:hover{
+        color: rgb(255, 255, 255);
+        /* background-color: rgb(0, 255, 149); */
+    }
+    header > .header > .info{
+        width: 80px;
+        height: 70px;
+        position: relative;
+        /* background-color: rgb(204, 0, 255); */
+    }
+    header > .header > .info > nav{
+        width: 40px;
+        height: 48px;
+        float: left;
+        user-select: none;
+        padding-top: 22px;
+        /* background-color: rgb(214, 82, 247); */
+    }
+
+    /* 검색 */
+    header > .header > .info > .search{
+        position: relative;
+    }
+    header > .header > .info > .search > .search-button{
+        cursor: pointer;
+    }
+
+    header > .header > .info > .search  .search-area{
+        width: 310px;
+        height: 42px;
+
+        position: absolute;
+        top: -50px;
+        right: 15px;
+        display: flex;
+        background-color: rgba(0, 0, 0, 0);
+
+        overflow: hidden;
+    }
+    header > .header > .info > .search  .search-box{
+        width: 300px;
+        height: 40px;
+        
+        display: flex;
+        border: 1px solid rgb(107, 107, 107);
+        background-color: rgb(0, 0, 0);
+    }
+    header > .header > .info > .search  .search-t{
+        width: 80px;
+        height: 40px;
+
+        background: linear-gradient(90deg, rgba(27, 27, 27, 0), #1b1b1b);
+    }
+
+    header > .header > .info > .search  .search-box  svg{
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 5px;
+    }
+    header > .header > .info > .search  .search-box  input{
+        width: 220px;
+        height: 25px;
+        display: block;
+        border: none;
+        outline: none; /* 포커스 시 테두리도 제거 */
+        color: white;
+        margin-top: 7px;
+        
+        background-color: rgb(0, 0, 0);
+    }
+
+    /* 내정보 */
+    .my-info-box {
+        width: 200px;
+        height: 165px;
+        display: none;
+        position: absolute;
+        top: 45px;
+        right: 10px;
+        z-index: 100;
+        background-color: rgb(30, 30, 30);
+    }
+    .my-info-box .my-info-box-area {
+        width: 180px;
+        height: 130px;
+        margin: auto;
+        margin-top: 35px;
+
+        /* background-color: rgb(116, 77, 77); */
+    }
+    .my-info-box .my-info-box-area div {
+        width: 200px;
+        height: 40px;
+        text-align: left;
+        text-indent: 10px;
+        font-weight: 350;
+        font-size: 15px;
+        line-height: 40px;
+        color: rgb(179, 179, 179);
+
+        /* background-color: rgb(116, 77, 77); */
+    }
+    .my-info-box .my-info-box-area div:hover {
+        cursor: pointer;
+        color: rgb(255, 255, 255);
+    }
+
+    /** 헤더E */
+
+
+    .warp {
+        background-color: rgb(30, 30, 30);
+    }
+    
+    main {
+        width: 100%;
+        min-height: 1300px;
+        padding-top: 70px;
+        background-color: rgb(30, 30, 30);
+    }
+    main > .main{
+        width: 100%;
+        min-height: 800px;
+        /* background-color: rgb(0, 255, 149); */
+    }
+    
+    /* swiper */
+    .swiper-container {
+        position: relative;
+        width: 100%;
+        max-width: 1240px;
+        height: 504px;
+        margin: auto;
+        margin-bottom: 100px;
+    }
+    .swiper-container > .swiper-wrapper > .swiper-slide {
+        width: 1240px !important;
+        height: 504px !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .swiper-container > .swiper-wrapper > .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        border-radius: 10px;
+    }
+    /* 가운데 슬라이드 확대 효과 */
+    .swiper-slide-active img {
+        /* transform: scale(1.1); */
+        /* box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5); */
+    }
+    .swiper-pagination {
+        width: 30px;
+        font-size: 12px;
+        font-weight: bold;
+        color: white;
+        position: absolute;
+        bottom: 10px;
+        left: 1170px;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
+    /* 현재 페이지 색상 */
+    .swiper-pagination-current {
+        color: #ffffff;  /* 현재 페이지 텍스트 색상 */
+    }
+    /* 전체 페이지 색상 */
+    .swiper-pagination-total {
+        color: #a5a5a5;  /* 전체 페이지 텍스트 색상 */
+    }
+    .content {
+        width: 100%;
+        height: 500px;
+        margin-bottom: 20px;
+        /* background-color: red; */
+    }
+    .content > .content-area {
+        width: 1240px;
+        height: 500px;
+        margin: auto;
+        /* background-color: rgb(206, 107, 107); */
+    }
+    .content > .content-area > .head-box {
+        width: 1240px;
+        height: 50px;
+        position: relative;
+        /* background-color: rgb(255, 0, 0); */
+    }
+    .content > .content-area > .head-box > .head-box-title {
+        width: 1240px;
+        height: 50px;
+        color: white;
+        font-size: 17px;
+        /* background-color: rgb(85, 85, 85); */
+    }
+    .content > .content-area > .head-box > .head-box-more-button {
+        width: 70px;
+        height: 37px;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        user-select: none;
+        padding-top: 13px;
+        /* background-color: rgb(119, 119, 119); */
+    }
+    .content > .content-area > .head-box > .head-box-more-button > .more-button {
+        display: block;
+        width: 65px;
+        height: 24px;
+        background-color: red;
+        color: rgb(179, 179, 179);
+        background: url(https://www.wavve.com/img/icon-arrow-see-all-default.01e1b585.svg) no-repeat 100%;
+    }
+    .content > .content-area > .content-list {
+        width: 1240px;
+        height: 450px;
+        overflow: hidden;
+        /* background-color: rgb(202, 202, 202); */
+    }
+    .swiper-wrapper {
+        user-select: none;
+    }
+    .content-swiper {
+        position: relative;
+    }
+    .content-swiper .swiper-button-next{
+        width: 35px;
+        height: 50px;
+        background-color: rgba(65, 65, 65, 0.568);
+        top: 160px;
+        right: -40px;
+    }
+    .content-swiper .swiper-button-prev{
+        width: 35px;
+        height: 50px;
+        background-color: rgba(65, 65, 65, 0.568);
+        top: 160px;
+        left: -40px;
+    }
+    .content-swiper .swiper-slide {
+        width: 240px !important;
+        height: 360px !important;
+        text-align: center;
+        border-radius: 10px 10px 10px 10px;
+        font-size: 18px;
+        /* background: #fff; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    .content-swiper .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px 10px 10px 10px;
+        object-fit: cover;
+        transition: transform 0.2s ease-in-out;
+    }
+    .content-swiper .swiper-slide img:hover {
+        transform: scale(1.05);
+    }
+
+        /** 공지사항S */
+
+    .announcement {
+        width: 100%;
+        height: 50px;
+        border-top: 1px solid rgb(56, 56, 56);
+        border-bottom: 1px solid rgb(56, 56, 56);
+        color: rgb(133, 133, 133);
+
+        background-color: rgb(30, 30, 30);
+    }
+    .announcement > div{
+        width: 1240px;
+        height: 100%;
+        margin: auto;
+        display: flex;
+
+        /* background-color: red; */
+    }
+    .announcement > div > .title{
+        width: 120px;
+        height: 100%;
+        line-height: 50px;
+
+        /* background-color: red; */
+    }
+    .announcement > div > .announcement-swiper{
+        width: 1040px;
+        height: 100%;
+        line-height: 50px;
+
+        /* background-color: red; */
+    }
+    .announcement > div > .announcement-swiper > .swiper{
+        width: 700px;
+        height: 50px;
+        line-height: 50px;
+        margin-left: 0px;
+
+        /* background-color: rgb(141, 60, 60); */
+    }
+    .announcement-swiper > .swiper .swiper-slide {
+        text-align: left;
+        text-indent: 5px;
+        font-size: 15px;
+        /* background: #fff; */
+    }
+    .announcement > div > .prev-button-area {
+        width: 50px;
+        height: 100%;
+        border-left: 1px solid rgb(56, 56, 56);
+        border-right: 1px solid rgb(56, 56, 56);
+        cursor: pointer;
+    }
+    .announcement > div > .next-button-area {
+        width: 50px;
+        height: 100%;
+        border-right: 1px solid rgb(56, 56, 56);
+        cursor: pointer;
+    }
+
+    /** 공지사항E */
+
+    /** 풋터S */
+
+    footer {
+        width: 100%;
+        min-height: 200px;
+        color: rgb(112, 112, 112);
+        /* background-color: red; */
+    }
+    footer .footer-area {
+        width: 1240px;
+        height: 100%;
+        margin: auto;
+        /* background-color: rgb(206, 107, 107); */
+    }
+    footer .footer-area .footer-link {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        /* background-color: rgb(194, 194, 194); */
+    }
+    footer .footer-area .footer-link ul{
+        display: flex;
+        margin-right: 290px;
+        /* background-color: rgb(153, 153, 153); */
+    }
+    footer .footer-area .footer-link ul li {
+        height: 60px;
+        line-height: 60px;
+        cursor: pointer;
+        margin-right: 25px;
+        font-size: 14px;
+        display: block;
+        /* background-color: rgb(153, 153, 153); */
+    }
+    footer .footer-area .footer-link ul li:hover {
+        color: rgb(255, 255, 255);
+    }
+    footer .footer-area .footer-link .footer-link-select-logo {
+        width: 100px;
+        height: 60px;
+        display: flex;
+        /* background-color: rgb(194, 194, 194); */
+    }
+    footer .footer-area .footer-link .footer-link-select-logo label {
+        width: 100px;
+        height: 40px;
+        margin-top: 10px;
+        /* background-color: rgb(194, 194, 194); */
+    }
+    footer .footer-area .footer-link .footer-link-select {
+        width: 230px;
+        height: 30px;
+        margin-top: 15px;
+        /* background-color: rgb(194, 194, 194); */
+    }
+    footer .footer-area .footer-link .facebook-link {
+        width: 35px;
+        height: 35px;
+        margin-top: 13px;
+        margin-left: 10px;
+        /* background-color: rgb(194, 194, 194); */
+    }
+    footer .footer-area .footer-link .facebook-link img {
+        max-width: 100%;
+    }
+    footer .footer-area .footer-link .naver-link {
+        width: 35px;
+        height: 35px;
+        margin-top: 13px;
+        margin-left: 10px;
+        /* background-color: rgb(194, 194, 194); */
+    }
+    footer .footer-area .footer-link .naver-link img {
+        max-width: 100%;
+    }
+
+    footer .footer-area .footer-info {
+        width: 100%;
+        height: 200px;
+        font-family: Arial, sans-serif;
+        font-size: 11px;
+    }
+
+    footer .footer-area .footer-info address{
+        display: inline-block;
+    }
+
+    /** 풋터E */
+
+}
+/** 메인E */
